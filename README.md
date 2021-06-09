@@ -9,6 +9,11 @@ Esta central(probablemente un esp32) tendra una pantalla tactil TFT. Desde ella 
 
 Esta desarrollado sobre un stm8s103.
 
+Software
+---------
+
+Desarrollado con el ST Visual Develop y Cosmic CXSTM8 Special Edition 4.5.1
+
 Libreria GestorModo
 ---------------------
 
