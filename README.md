@@ -22,5 +22,7 @@ Main
 -------------
 
 Configuramos el reloj del micro
+
 Agrega sensores a modo de prueba.
+
 Borra sensor a modo de prueba
