@@ -70,7 +70,7 @@ typedef struct sGestorModoDatos
 
 typedef struct sGestorModo
 {
-	GestorModoDatos_t Datos;
+	//GestorModoDatos_t Datos;
 	
 	void ( *Registrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
 	void ( *Borrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
