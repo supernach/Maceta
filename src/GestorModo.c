@@ -31,7 +31,7 @@ void gm_Registrar( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos )
 		if( gestorModoDatos->Modos[sensor->idSensor].idSensor == ( gm_NUMERO_MAX_MODOS + 1 ) )
 		{			
 			gestorModoDatos->Modos[sensor->idSensor] = *sensor;
-			gestorModoDatos->Modos[sensor->idSensor].NotificarCambio();
+			gestorModoDatos->Modos[sensor->idSensor].NotificarCambio( gestorModoDatos->Modos[sensor->idSensor].idSensor );
 		}
 		else
 		{
@@ -55,9 +55,11 @@ void gm_NuevoModo()
 	
 }
 
-void gm_NotificarCambioDummy(void)
+void gm_NotificarCambioDummy(uint8_t idSensor)
 {
+	uint8_t test = 0;
 	
+	test = idSensor;
 }
 
 //Funciones "privadas"

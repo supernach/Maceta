@@ -98,28 +98,28 @@
  458                     ; 130 	Modo.Init = gm_Init;
  460  00a7 ae0000        	ldw	x,#_gm_Init
  461  00aa bf22          	ldw	_Modo+22,x
- 462                     ; 132 	Modo.Init(&Modo.Datos);
+ 462                     ; 132 	Modo.Init( &Modo.Datos );
  464  00ac ae000c        	ldw	x,#_Modo
  465  00af 92cd22        	call	[_Modo+22.w]
- 467                     ; 133 	Modo.Registrar(&testSensor, &Modo.Datos);
+ 467                     ; 133 	Modo.Registrar( &testSensor, &Modo.Datos );
  469  00b2 ae000c        	ldw	x,#_Modo
  470  00b5 89            	pushw	x
  471  00b6 ae0008        	ldw	x,#_testSensor
  472  00b9 92cd1c        	call	[_Modo+16.w]
  474  00bc 85            	popw	x
- 475                     ; 134 	Modo.Registrar(&testSensor1, &Modo.Datos);
+ 475                     ; 134 	Modo.Registrar( &testSensor1, &Modo.Datos );
  477  00bd ae000c        	ldw	x,#_Modo
  478  00c0 89            	pushw	x
  479  00c1 ae0004        	ldw	x,#_testSensor1
  480  00c4 92cd1c        	call	[_Modo+16.w]
  482  00c7 85            	popw	x
- 483                     ; 135 	Modo.Registrar(&testSensor2, &Modo.Datos);
+ 483                     ; 135 	Modo.Registrar( &testSensor2, &Modo.Datos );
  485  00c8 ae000c        	ldw	x,#_Modo
  486  00cb 89            	pushw	x
  487  00cc ae0000        	ldw	x,#_testSensor2
  488  00cf 92cd1c        	call	[_Modo+16.w]
  490  00d2 85            	popw	x
- 491                     ; 137 	Modo.Borrar(&testSensor, &Modo.Datos);
+ 491                     ; 137 	Modo.Borrar( &testSensor, &Modo.Datos );
  493  00d3 ae000c        	ldw	x,#_Modo
  494  00d6 89            	pushw	x
  495  00d7 ae0008        	ldw	x,#_testSensor

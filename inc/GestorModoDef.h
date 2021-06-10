@@ -47,7 +47,7 @@ typedef struct sModoSensor
 	uint8_t idSensor;
 	Modo_t Modo;
 	
-	void ( *NotificarCambio )(void);
+	void ( *NotificarCambio )(uint8_t idSensor);
 } ModoSensor_t;
 
 /**

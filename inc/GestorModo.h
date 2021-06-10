@@ -56,7 +56,7 @@ void gm_NuevoModo(void);
 @brief Cada elemento tiene que definir una funcion de notificacion.
 			 Sino para eso he creado esta.
 */
-void gm_NotificarCambioDummy(void);
+void gm_NotificarCambioDummy(uint8_t idSensor);
 
 
 
