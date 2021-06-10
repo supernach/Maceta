@@ -94,7 +94,7 @@
  463  005b               _gm_NotificarCambioDummy:
  467                     ; 60 }
  470  005b 81            	ret
- 508                     ; 64 void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
+ 508                     ; 64 static void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
  508                     ; 65 {
  509                     	switch	.text
  510  005c               L3_gm_InicializarPosicionBuffer:

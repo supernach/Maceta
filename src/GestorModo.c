@@ -61,7 +61,7 @@ void gm_NotificarCambioDummy(void)
 
 //Funciones "privadas"
 
-void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
+static void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
 {
 	posicion->idSensor = ( NUMERO_MAX_MODOS + 1 );
 	posicion->Modo.Medicion = 0;
