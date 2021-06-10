@@ -129,12 +129,12 @@ static @inline void InicializacionGestionModos(void)
 	Modo.NuevoModo = gm_NuevoModo;
 	Modo.Init = gm_Init;
 	
-	Modo.Init(&ModoDatos);
-	Modo.Registrar(&testSensor, &ModoDatos);
-	Modo.Registrar(&testSensor1, &ModoDatos);
-	Modo.Registrar(&testSensor2, &ModoDatos);
+	Modo.Init(&Modo.Datos);
+	Modo.Registrar(&testSensor, &Modo.Datos);
+	Modo.Registrar(&testSensor1, &Modo.Datos);
+	Modo.Registrar(&testSensor2, &Modo.Datos);
 	
-	Modo.Borrar(&testSensor, &ModoDatos);
+	Modo.Borrar(&testSensor, &Modo.Datos);
 }
 
 /**

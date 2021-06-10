@@ -1,5 +1,5 @@
 
-Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Thu Jun 10 02:14:08 2021
+Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Thu Jun 10 02:45:15 2021
 
 
                                --------
@@ -16,7 +16,7 @@ start 0000002e end 0000002e length     0 segment .share
 start 00000100 end 00000100 length     0 segment .data
 start 00000100 end 00000100 length     0 segment .bss
 start 00000000 end 00000ddf length  3551 segment .info.
-start 00000000 end 00012065 length 73829 segment .debug
+start 00000000 end 00012061 length 73825 segment .debug
 start 00008000 end 00008080 length   128 segment .const
 start 0000808c end 0000808f length     3 segment .init
 
@@ -34,113 +34,113 @@ start 00000000 end 00000034 length    52 section .info.
 Debug\main.o:
 start 000080df end 000081dd length   254 section .text
 start 00000000 end 00000024 length    36 section .ubsct
-start 00000000 end 000005c7 length  1479 section .debug
+start 00000000 end 000005c3 length  1475 section .debug
 start 00000034 end 0000009e length   106 section .info.
 
 Debug\clock.o:
 start 000081dd end 00008256 length   121 section .text
-start 000005c7 end 00000d6e length  1959 section .debug
+start 000005c3 end 00000d6a length  1959 section .debug
 start 0000009e end 00000109 length   107 section .info.
 
 Debug\gestormodo.o:
 start 00008256 end 000082e6 length   144 section .text
-start 00000d6e end 00001247 length  1241 section .debug
+start 00000d6a end 00001243 length  1241 section .debug
 start 00000109 end 00000179 length   112 section .info.
 
 Debug\gpio.o:
 start 000082e6 end 00008340 length    90 section .text
-start 00001247 end 00001850 length  1545 section .debug
+start 00001243 end 0000184c length  1545 section .debug
 start 00000179 end 000001e3 length   106 section .info.
 
 Debug\stm8s_adc1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00001850 end 00002e41 length  5617 section .debug
+start 0000184c end 00002e3d length  5617 section .debug
 start 000001e3 end 00000253 length   112 section .info.
 
 Debug\stm8s_awu.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00002e41 end 00003400 length  1471 section .debug
+start 00002e3d end 000033fc length  1471 section .debug
 start 00000253 end 000002c2 length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_beep.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00003400 end 000036db length   731 section .debug
+start 000033fc end 000036d7 length   731 section .debug
 start 000002c2 end 00000332 length   112 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_clk.o:
 start 00008340 end 000086c4 length   900 section .text
-start 000036db end 00004d4a length  5743 section .debug
+start 000036d7 end 00004d46 length  5743 section .debug
 start 00000332 end 000003a1 length   111 section .info.
 start 00008080 end 0000808c length    12 section .const
 
 Debug\stm8s_exti.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00004d4a end 000051d9 length  1167 section .debug
+start 00004d46 end 000051d5 length  1167 section .debug
 start 000003a1 end 00000411 length   112 section .info.
 
 Debug\stm8s_flash.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 000051d9 end 00005fb8 length  3551 section .debug
+start 000051d5 end 00005fb4 length  3551 section .debug
 start 00000411 end 00000482 length   113 section .info.
 
 Debug\stm8s_gpio.o:
 start 000086c4 end 00008776 length   178 section .text
-start 00005fb8 end 000069c2 length  2570 section .debug
+start 00005fb4 end 000069be length  2570 section .debug
 start 00000482 end 000004f2 length   112 section .info.
 
 Debug\stm8s_i2c.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 000069c2 end 00007f63 length  5537 section .debug
+start 000069be end 00007f5f length  5537 section .debug
 start 000004f2 end 00000561 length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_itc.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00007f63 end 00008566 length  1539 section .debug
+start 00007f5f end 00008562 length  1539 section .debug
 start 00000561 end 000005d0 length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_iwdg.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00008566 end 00008908 length   930 section .debug
+start 00008562 end 00008904 length   930 section .debug
 start 000005d0 end 00000640 length   112 section .info.
 
 Debug\stm8s_rst.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00008908 end 00008b37 length   559 section .debug
+start 00008904 end 00008b33 length   559 section .debug
 start 00000640 end 000006af length   111 section .info.
 
 Debug\stm8s_spi.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00008b37 end 00009a73 length  3900 section .debug
+start 00008b33 end 00009a6f length  3900 section .debug
 start 000006af end 0000071e length   111 section .info.
 
 Debug\stm8s_tim1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00009a73 end 0000d9fd length 16266 section .debug
+start 00009a6f end 0000d9f9 length 16266 section .debug
 start 0000071e end 0000078e length   112 section .info.
 
 Debug\stm8s_tim2.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000d9fd end 0000fd11 length  8980 section .debug
+start 0000d9f9 end 0000fd0d length  8980 section .debug
 start 0000078e end 000007fe length   112 section .info.
 
 Debug\stm8s_tim4.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000fd11 end 000108c8 length  2999 section .debug
+start 0000fd0d end 000108c4 length  2999 section .debug
 start 000007fe end 0000086e length   112 section .info.
 
 Debug\stm8s_uart1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 000108c8 end 00011cb4 length  5100 section .debug
+start 000108c4 end 00011cb0 length  5100 section .debug
 start 0000086e end 000008df length   113 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_wwdg.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00011cb4 end 00011efa length   582 section .debug
+start 00011cb0 end 00011ef6 length   582 section .debug
 start 000008df end 0000094f length   112 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\Lib\libm0.sm8)cmulx.o:
@@ -229,7 +229,7 @@ start 00000d01 end 00000d30 length    47 section .info.
 
 Debug\stm8_interrupt_vector.o:
 start 00008900 end 00008901 length     1 section .text
-start 00011efa end 00012065 length   363 section .debug
+start 00011ef6 end 00012061 length   363 section .debug
 start 00000d30 end 00000dab length   123 section .info.
 start 00008000 end 00008080 length   128 section .const
 
@@ -389,69 +389,68 @@ Stack size: 31
           | 
   50      + _GPIO_DeInit: (2)
   51      + (_gm_Borrar) ...
-  52      + _gm_Init: (4)
-  53      |    + L3_gm_InicializarPosicionBuffer: (2)
-          | 
-  54      + (_gm_NotificarCambioDummy) ...
-  55      + (_gm_NuevoModo) ...
-  56      + (_gm_Registrar) ...
+  52      + (_gm_Init) ...
+  53      + (_gm_NotificarCambioDummy) ...
+  54      + (_gm_NuevoModo) ...
+  55      + (_gm_Registrar) ...
        
-  57 > f_NonHandledInterrupt: (6)
+  56 > f_NonHandledInterrupt: (6)
 
-  58   L3_gm_InicializarPosicionBuffer --> 53
+  57   L3_gm_InicializarPosicionBuffer: (2)
 
-  59   _CLK_CCOCmd --> 13
+  58   _CLK_CCOCmd --> 13
 
-  60   _CLK_CCOConfig --> 14
+  59   _CLK_CCOConfig --> 14
 
-  61   _CLK_ClockSwitchCmd --> 39
+  60   _CLK_ClockSwitchCmd --> 39
 
-  62   _CLK_ClockSwitchConfig --> 40
+  61   _CLK_ClockSwitchConfig --> 40
 
-  63   _CLK_DeInit --> 41
+  62   _CLK_DeInit --> 41
 
-  64   _CLK_GetFlagStatus --> 42
+  63   _CLK_GetFlagStatus --> 42
 
-  65   _CLK_HSECmd --> 43
+  64   _CLK_HSECmd --> 43
 
-  66   _CLK_HSICmd --> 44
+  65   _CLK_HSICmd --> 44
 
-  67   _CLK_HSIPrescalerConfig --> 45
+  66   _CLK_HSIPrescalerConfig --> 45
 
-  68   _CLK_LSICmd --> 46
+  67   _CLK_LSICmd --> 46
 
-  69   _CLK_PeripheralClockConfig --> 49
+  68   _CLK_PeripheralClockConfig --> 49
 
-  70   _CLK_SYSCLKConfig --> 47
+  69   _CLK_SYSCLKConfig --> 47
 
-  71   _Clock_HSI_Init --> 38
+  70   _Clock_HSI_Init --> 38
 
-  72   _DisableAllPeripherals --> 48
+  71   _DisableAllPeripherals --> 48
 
-  73   _GPIO_DeInit --> 50
+  72   _GPIO_DeInit --> 50
 
-  74   _GPIO_Init --> 16
+  73   _GPIO_Init --> 16
 
-  75   _GPIO_ReadInputPin --> 29
+  74   _GPIO_ReadInputPin --> 29
 
-  76   _GPIO_WriteHigh --> 35
+  75   _GPIO_WriteHigh --> 35
 
-  77   _GPIO_WriteLow --> 33
+  76   _GPIO_WriteLow --> 33
 
-  78   _Output10mhz_Init --> 15
+  77   _Output10mhz_Init --> 15
 
-  79   _gm_Borrar: (6)
-  80      + L3_gm_InicializarPosicionBuffer --> 53
+  78   _gm_Borrar: (6)
+  79      + L3_gm_InicializarPosicionBuffer --> 57
        
-  81   _gm_Init --> 52
-
+  80   _gm_Init: (4)
+  81      + L3_gm_InicializarPosicionBuffer --> 57
+       
   82   _gm_NotificarCambioDummy: (2)
 
   83   _gm_NuevoModo: (2)
 
   84   _gm_Registrar: (6)
-  85      + (_gm_Borrar) --> 79
-  86      + (_gm_Init) --> 52
+  85      + (_gm_Borrar) --> 78
+  86      + (_gm_Init) --> 80
   87      + (_gm_NotificarCambioDummy) --> 82
   88      + (_gm_NuevoModo) --> 83
   89      + (_gm_Registrar) --> 84
@@ -611,7 +610,6 @@ _Input_FL_Init                   000082f1   defined in Debug\gpio.o section .tex
 _Input_Init                      000082e6   defined in Debug\gpio.o section .text
 _IsActive                        0000832f   defined in Debug\gpio.o section .text
 _Modo                            0000000c   defined in Debug\main.o section .ubsct
-_ModoDatos                       00000014   defined in Debug\main.o section .ubsct
 _Output10mhz_Init                00008312   defined in Debug\gpio.o section .text
                                             used in Debug\clock.o
 _Output2mhz_Init                 00008307   defined in Debug\gpio.o section .text

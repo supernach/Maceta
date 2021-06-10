@@ -3,8 +3,6 @@
 
 #include "gestormodo.h"
 
-
-GestorModoDatos_t ModoDatos;
 GestorModo_t Modo;
 
 
