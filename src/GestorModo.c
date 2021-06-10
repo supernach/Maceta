@@ -4,6 +4,15 @@ void gm_Init( GestorModoDatos_t* gestorModoDatos )
 {
 	uint8_t indice = 0;
 	
+	/*gm_Medicion.Medicion = true;
+	gm_Medicion.Calibracion = false;
+	gm_Medicion.Taraje = false;
+	gm_Medicion.Res4 = false;
+	gm_Medicion.Res5 = false;
+	gm_Medicion.Res6 = false;
+	gm_Medicion.Res7 = false;
+	gm_Medicion.Res8 = false;*/
+	
 	for( indice; indice < gm_NUMERO_MAX_MODOS; indice++)
 	{
 		gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[indice]);
@@ -50,9 +59,9 @@ void gm_Borrar( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos )
 	gm_InicializarPosicionBuffer( &gestorModoDatos->Modos[sensor->idSensor] );
 }
 
-void gm_NuevoModo()
+void gm_NuevoModo(ModoSensor_t* sensor, Modo_t* nuevoModo)
 {
-	
+	sensor->Modo = *nuevoModo;
 }
 
 void gm_NotificarCambioDummy(uint8_t idSensor)

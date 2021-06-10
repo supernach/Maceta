@@ -11,13 +11,20 @@
 #include "maceta_def.h"
  
  
- 
+/**
+/* @brief configuracion reloj sistema.
+*/
 #define FCLK 16000000 //Velocidad frecuencia cpu(depende de la configuracion)
 #include "delay.h"
 
+/**
+/* @brief Elementos del sistema
+*/
 ModoSensor_t testSensor;
 ModoSensor_t testSensor1;
 ModoSensor_t testSensor2;
+ModoSensor_t testSensor3;
+ModoSensor_t testSensor4;
 
 /**
 /*
@@ -72,6 +79,20 @@ static @inline void InicializacionCLK(void)
 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
 }
 
+static @inline void aux_InicializacionModoSensores(ModoSensor_t* sensor, uint8_t id)
+{
+	sensor->idSensor = id;
+	sensor->Modo.Medicion = false;
+	sensor->Modo.Calibracion = false;
+	sensor->Modo.Taraje = false;
+	sensor->Modo.Res4 = false;
+	sensor->Modo.Res5 = false;
+	sensor->Modo.Res6 = false;
+	sensor->Modo.Res7 = false;
+	sensor->Modo.Res8 = false;
+	sensor->NotificarCambio = gm_NotificarCambioDummy;
+}
+
 /**
 /*
 /* @brief Inicializacion modo de elementos
@@ -80,38 +101,13 @@ static @inline void InicializacionCLK(void)
 */
 static @inline void InicializacionModoSensores(void)
 {
-	testSensor.idSensor = 0;
-	testSensor.Modo.Medicion = true;
-	testSensor.Modo.Calibracion = false;
-	testSensor.Modo.Taraje = false;
-	testSensor.Modo.Res4 = false;
-	testSensor.Modo.Res5 = false;
-	testSensor.Modo.Res6 = false;
-	testSensor.Modo.Res7 = false;
-	testSensor.Modo.Res8 = false;
-	testSensor.NotificarCambio = gm_NotificarCambioDummy;
+	aux_InicializacionModoSensores(&testSensor, 0);
+	aux_InicializacionModoSensores(&testSensor1, 1);
+	aux_InicializacionModoSensores(&testSensor2, 2);
+	aux_InicializacionModoSensores(&testSensor3, 3);
+	aux_InicializacionModoSensores(&testSensor4, 4);
 	
-	testSensor1.idSensor = 1;
-	testSensor1.Modo.Medicion = false;
-	testSensor1.Modo.Calibracion = true;
-	testSensor1.Modo.Taraje = false;
-	testSensor1.Modo.Res4 = false;
-	testSensor1.Modo.Res5 = false;
-	testSensor1.Modo.Res6 = false;
-	testSensor1.Modo.Res7 = false;
-	testSensor1.Modo.Res8 = false;
-	testSensor1.NotificarCambio = gm_NotificarCambioDummy;
 	
-	testSensor2.idSensor = 2;
-	testSensor2.Modo.Medicion = false;
-	testSensor2.Modo.Calibracion = false;
-	testSensor2.Modo.Taraje = true;
-	testSensor2.Modo.Res4 = false;
-	testSensor2.Modo.Res5 = false;
-	testSensor2.Modo.Res6 = false;
-	testSensor2.Modo.Res7 = false;
-	testSensor2.Modo.Res8 = false;
-	testSensor2.NotificarCambio = gm_NotificarCambioDummy;
 }
 
 /**
@@ -133,6 +129,8 @@ static @inline void InicializacionGestionModos(void)
 	Modo.Registrar( &testSensor, &Modo.Datos );
 	Modo.Registrar( &testSensor1, &Modo.Datos );
 	Modo.Registrar( &testSensor2, &Modo.Datos );
+	Modo.Registrar( &testSensor3, &Modo.Datos );
+	Modo.Registrar( &testSensor4, &Modo.Datos );
 	
 	Modo.Borrar( &testSensor, &Modo.Datos );
 }

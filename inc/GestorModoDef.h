@@ -34,6 +34,10 @@ typedef struct sModo
 	bool Res8;
 } Modo_t;
 
+/*Modo_t gm_Medicion;
+Modo_t gm_Calibracion;
+Modo_t gm_Taraje;*/
+
 /**
 @brief Definicion del elemento sensor y sus distintas partes.
 @param idSensor identificador unico. Existe un maximo NUMERO_MAX_MODOS
@@ -74,7 +78,7 @@ typedef struct sGestorModo
 	
 	void ( *Registrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
 	void ( *Borrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
-	void ( *NuevoModo )(void);
+	void ( *NuevoModo )(ModoSensor_t* sensor, Modo_t* nuevoModo);
 	void ( *Init )( GestorModoDatos_t* gestorModoDatos );
 } GestorModo_t;
 

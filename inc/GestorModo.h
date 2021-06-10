@@ -15,6 +15,8 @@
 #include "stm8s.h"
 #include "gestormododef.h"
 
+//gm_Medicion.Medicion = true;
+
 /**
 @brief Inicializacion del buffer de datos del gestor de modo
 @param gestorModoDatos Buffer del gestor
@@ -50,7 +52,7 @@ void gm_Borrar( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
 /**
 @brief Recepcion de un nuevo modo desde un componente externo
 */
-void gm_NuevoModo(void);
+void gm_NuevoModo(ModoSensor_t* sensor, Modo_t* nuevoModo);
 
 /**
 @brief Cada elemento tiene que definir una funcion de notificacion.

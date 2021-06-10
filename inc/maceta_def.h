@@ -3,6 +3,8 @@
 
 #include "gestormodo.h"
 
+//Modo_t Midiendo;
+
 GestorModo_t Modo;
 
 
