@@ -133,6 +133,8 @@ static @inline void InicializacionGestionModos(void)
 	Modo.Registrar( &testSensor4, &Modo.Datos );
 	
 	Modo.Borrar( &testSensor, &Modo.Datos );
+	
+	//Modo.NuevoModo(&testSensor1, 0b10000000);
 }
 
 /**

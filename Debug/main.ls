@@ -1,8 +1,8 @@
    1                     ; C Compiler for STM8 (COSMIC Software)
    2                     ; Parser V4.12.3 - 05 Nov 2020
    3                     ; Generator (Limited) V4.5.1 - 29 Sep 2020
- 500                     ; 161 int main()
- 500                     ; 162 {
+ 500                     ; 163 int main()
+ 500                     ; 164 {
  502                     	switch	.text
  503  0000               _main:
  505  0000 89            	pushw	x
@@ -23,7 +23,7 @@
  534  0019 ae0080        	ldw	x,#128
  535  001c cd0000        	call	_Clock_HSI_Init
  537  001f               L102:
- 538                     ; 163 	Inicializacion_Total();
+ 538                     ; 165 	Inicializacion_Total();
  543                     ; 84 	sensor->idSensor = id;
  545  001f 3f10          	clr	_testSensor
  546                     ; 85 	sensor->Modo.Medicion = false;
@@ -45,7 +45,7 @@
  570                     ; 93 	sensor->NotificarCambio = gm_NotificarCambioDummy;
  572  0041 ae0000        	ldw	x,#_gm_NotificarCambioDummy
  573  0044 bf12          	ldw	_testSensor+2,x
- 574                     ; 163 	Inicializacion_Total();
+ 574                     ; 165 	Inicializacion_Total();
  577                     ; 84 	sensor->idSensor = id;
  579  0046 3501000c      	mov	_testSensor1,#1
  580                     ; 85 	sensor->Modo.Medicion = false;
@@ -67,7 +67,7 @@
  604                     ; 93 	sensor->NotificarCambio = gm_NotificarCambioDummy;
  606  006a ae0000        	ldw	x,#_gm_NotificarCambioDummy
  607  006d bf0e          	ldw	_testSensor1+2,x
- 608                     ; 163 	Inicializacion_Total();
+ 608                     ; 165 	Inicializacion_Total();
  611                     ; 84 	sensor->idSensor = id;
  613  006f 35020008      	mov	_testSensor2,#2
  614                     ; 85 	sensor->Modo.Medicion = false;
@@ -89,7 +89,7 @@
  638                     ; 93 	sensor->NotificarCambio = gm_NotificarCambioDummy;
  640  0093 ae0000        	ldw	x,#_gm_NotificarCambioDummy
  641  0096 bf0a          	ldw	_testSensor2+2,x
- 642                     ; 163 	Inicializacion_Total();
+ 642                     ; 165 	Inicializacion_Total();
  645                     ; 84 	sensor->idSensor = id;
  647  0098 35030004      	mov	_testSensor3,#3
  648                     ; 85 	sensor->Modo.Medicion = false;
@@ -111,7 +111,7 @@
  672                     ; 93 	sensor->NotificarCambio = gm_NotificarCambioDummy;
  674  00bc ae0000        	ldw	x,#_gm_NotificarCambioDummy
  675  00bf bf06          	ldw	_testSensor3+2,x
- 676                     ; 163 	Inicializacion_Total();
+ 676                     ; 165 	Inicializacion_Total();
  679                     ; 84 	sensor->idSensor = id;
  681  00c1 35040000      	mov	_testSensor4,#4
  682                     ; 85 	sensor->Modo.Medicion = false;
