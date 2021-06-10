@@ -8,19 +8,19 @@
  203  0000 89            	pushw	x
  204       00000000      OFST:	set	0
  207                     ; 5 	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[0]);
- 209  0001 ad59          	call	_gm_InicializarPosicionBuffer
+ 209  0001 ad59          	call	L3_gm_InicializarPosicionBuffer
  211                     ; 6 	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[1]);
  213  0003 1e01          	ldw	x,(OFST+1,sp)
  214  0005 1c0004        	addw	x,#4
- 215  0008 ad52          	call	_gm_InicializarPosicionBuffer
+ 215  0008 ad52          	call	L3_gm_InicializarPosicionBuffer
  217                     ; 7 	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[2]);
  219  000a 1e01          	ldw	x,(OFST+1,sp)
  220  000c 1c0008        	addw	x,#8
- 221  000f ad4b          	call	_gm_InicializarPosicionBuffer
+ 221  000f ad4b          	call	L3_gm_InicializarPosicionBuffer
  223                     ; 8 	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[3]);
  225  0011 1e01          	ldw	x,(OFST+1,sp)
  226  0013 1c000c        	addw	x,#12
- 227  0016 ad44          	call	_gm_InicializarPosicionBuffer
+ 227  0016 ad44          	call	L3_gm_InicializarPosicionBuffer
  229                     ; 10 }
  232  0018 85            	popw	x
  233  0019 81            	ret
@@ -33,7 +33,7 @@
  290                     ; 28 	if( sensor->idSensor < NUMERO_MAX_MODOS )
  292  001b f6            	ld	a,(x)
  293  001c a104          	cp	a,#4
- 294  001e 242b          	jruge	L161
+ 294  001e 242b          	jruge	L361
  295                     ; 30 		if( gestorModoDatos->Modos[sensor->idSensor].idSensor == ( NUMERO_MAX_MODOS + 1 ) )
  297  0020 f6            	ld	a,(x)
  298  0021 97            	ld	xl,a
@@ -42,7 +42,7 @@
  301  0025 72fb05        	addw	x,(OFST+5,sp)
  302  0028 f6            	ld	a,(x)
  303  0029 a105          	cp	a,#5
- 304  002b 261e          	jrne	L161
+ 304  002b 261e          	jrne	L361
  305                     ; 32 			gestorModoDatos->Modos[sensor->idSensor] = *sensor;
  307  002d 1e01          	ldw	x,(OFST+1,sp)
  308  002f f6            	ld	a,(x)
@@ -62,7 +62,7 @@
  324  0045 72fb05        	addw	x,(OFST+5,sp)
  325  0048 ee02          	ldw	x,(2,x)
  326  004a fd            	call	(x)
- 329  004b               L161:
+ 329  004b               L361:
  330                     ; 45 }
  333  004b 85            	popw	x
  334  004c 81            	ret
@@ -78,7 +78,7 @@
  396  0050 a604          	ld	a,#4
  397  0052 42            	mul	x,a
  398  0053 72fb05        	addw	x,(OFST+5,sp)
- 399  0056 ad04          	call	_gm_InicializarPosicionBuffer
+ 399  0056 ad04          	call	L3_gm_InicializarPosicionBuffer
  401                     ; 50 }
  404  0058 85            	popw	x
  405  0059 81            	ret
@@ -97,7 +97,7 @@
  508                     ; 64 void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
  508                     ; 65 {
  509                     	switch	.text
- 510  005c               _gm_InicializarPosicionBuffer:
+ 510  005c               L3_gm_InicializarPosicionBuffer:
  514                     ; 66 	posicion->idSensor = ( NUMERO_MAX_MODOS + 1 );
  516  005c a605          	ld	a,#5
  517  005e f7            	ld	(x),a
@@ -135,12 +135,11 @@
  557  008d e701          	ld	(1,x),a
  558                     ; 76 }
  561  008f 81            	ret
- 574                     	xdef	_gm_InicializarPosicionBuffer
- 575                     	xdef	_gm_NotificarCambioDummy
- 576                     	xdef	_gm_NuevoModo
- 577                     	xdef	_gm_Borrar
- 578                     	xdef	_gm_Registrar
- 579                     	xdef	_gm_Init
- 580                     	xref.b	c_x
- 599                     	xref	c_xymov
- 600                     	end
+ 574                     	xdef	_gm_NotificarCambioDummy
+ 575                     	xdef	_gm_NuevoModo
+ 576                     	xdef	_gm_Borrar
+ 577                     	xdef	_gm_Registrar
+ 578                     	xdef	_gm_Init
+ 579                     	xref.b	c_x
+ 598                     	xref	c_xymov
+ 599                     	end

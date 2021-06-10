@@ -1,5 +1,5 @@
 
-Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Thu Jun 10 00:46:30 2021
+Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Thu Jun 10 02:04:42 2021
 
 
                                --------
@@ -239,70 +239,70 @@ start 00008000 end 00008080 length   128 section .const
                              -----------
 
 Debug\clock.o:
-_Clock_HSI_Init                     14   (4)
-_DisableAllPeripherals               6   (2)
-_EnableClockMirror              >   13   (5)
+_Clock_HSI_Init                      14   (4)
+_DisableAllPeripherals                6   (2)
+_EnableClockMirror               >   13   (5)
 
 Debug\gestormodo.o:
-_gm_Borrar                           8   (6)
-_gm_InicializarPosicionBuffer        2   (2)
-_gm_Init                             6   (4)
-_gm_NotificarCambioDummy             2   (2)
-_gm_NuevoModo                        2   (2)
-_gm_Registrar                       14   (6) *** Recursive *** *** pointer() ***
+L3_gm_InicializarPosicionBuffer       2   (2)
+_gm_Borrar                            8   (6)
+_gm_Init                              6   (4)
+_gm_NotificarCambioDummy              2   (2)
+_gm_NuevoModo                         2   (2)
+_gm_Registrar                        14   (6) *** Recursive *** *** pointer() ***
 
 Debug\gpio.o:
-_InputInt_Init                  >    8   (2)
-_Input_FL_Init                  >    8   (2)
-_Input_Init                     >    8   (2)
-_IsActive                       >    7   (2)
-_Output10mhz_Init                    8   (2)
-_Output2mhz_Init                >    8   (2)
-_Output_0                       >    7   (2)
-_Output_1                       >    7   (2)
+_InputInt_Init                   >    8   (2)
+_Input_FL_Init                   >    8   (2)
+_Input_Init                      >    8   (2)
+_IsActive                        >    7   (2)
+_Output10mhz_Init                     8   (2)
+_Output2mhz_Init                 >    8   (2)
+_Output_0                        >    7   (2)
+_Output_1                        >    7   (2)
 
 Debug\main.o:
-_main                           >   18   (4) *** Recursive *** *** pointer() ***
+_main                            >   18   (4) *** Recursive *** *** pointer() ***
 
 Debug\stm8_interrupt_vector.o:
-f_NonHandledInterrupt           >    6   (6)
+f_NonHandledInterrupt            >    6   (6)
 
 Debug\stm8s_clk.o:
-_CLK_AdjustHSICalibrationValue  >    3   (3)
-_CLK_CCOCmd                          2   (2)
-_CLK_CCOConfig                       3   (3)
-_CLK_ClearITPendingBit          >    2   (2)
-_CLK_ClockSecuritySystemEnable  >    2   (2)
-_CLK_ClockSwitchCmd                  2   (2)
-_CLK_ClockSwitchConfig              10   (10)
-_CLK_DeInit                          2   (2)
-_CLK_FastHaltWakeUpCmd          >    2   (2)
-_CLK_GetClockFreq               >   25   (11)
-_CLK_GetFlagStatus                   7   (7)
-_CLK_GetITStatus                >    4   (4)
-_CLK_GetSYSCLKSource            >    2   (2)
-_CLK_HSECmd                          2   (2)
-_CLK_HSICmd                          2   (2)
-_CLK_HSIPrescalerConfig              3   (3)
-_CLK_ITConfig                   >    4   (4)
-_CLK_LSICmd                          2   (2)
-_CLK_PeripheralClockConfig           4   (4)
-_CLK_SWIMConfig                 >    2   (2)
-_CLK_SYSCLKConfig                    3   (3)
-_CLK_SYSCLKEmergencyClear       >    2   (2)
-_CLK_SlowActiveHaltWakeUpCmd    >    2   (2)
+_CLK_AdjustHSICalibrationValue   >    3   (3)
+_CLK_CCOCmd                           2   (2)
+_CLK_CCOConfig                        3   (3)
+_CLK_ClearITPendingBit           >    2   (2)
+_CLK_ClockSecuritySystemEnable   >    2   (2)
+_CLK_ClockSwitchCmd                   2   (2)
+_CLK_ClockSwitchConfig               10   (10)
+_CLK_DeInit                           2   (2)
+_CLK_FastHaltWakeUpCmd           >    2   (2)
+_CLK_GetClockFreq                >   25   (11)
+_CLK_GetFlagStatus                    7   (7)
+_CLK_GetITStatus                 >    4   (4)
+_CLK_GetSYSCLKSource             >    2   (2)
+_CLK_HSECmd                           2   (2)
+_CLK_HSICmd                           2   (2)
+_CLK_HSIPrescalerConfig               3   (3)
+_CLK_ITConfig                    >    4   (4)
+_CLK_LSICmd                           2   (2)
+_CLK_PeripheralClockConfig            4   (4)
+_CLK_SWIMConfig                  >    2   (2)
+_CLK_SYSCLKConfig                     3   (3)
+_CLK_SYSCLKEmergencyClear        >    2   (2)
+_CLK_SlowActiveHaltWakeUpCmd     >    2   (2)
 
 Debug\stm8s_gpio.o:
-_GPIO_DeInit                         2   (2)
-_GPIO_ExternalPullUpConfig      >    6   (6)
-_GPIO_Init                           6   (6)
-_GPIO_ReadInputData             >    2   (2)
-_GPIO_ReadInputPin                   5   (5)
-_GPIO_ReadOutputData            >    2   (2)
-_GPIO_Write                     >    5   (5)
-_GPIO_WriteHigh                      5   (5)
-_GPIO_WriteLow                       5   (5)
-_GPIO_WriteReverse              >    5   (5)
+_GPIO_DeInit                          2   (2)
+_GPIO_ExternalPullUpConfig       >    6   (6)
+_GPIO_Init                            6   (6)
+_GPIO_ReadInputData              >    2   (2)
+_GPIO_ReadInputPin                    5   (5)
+_GPIO_ReadOutputData             >    2   (2)
+_GPIO_Write                      >    5   (5)
+_GPIO_WriteHigh                       5   (5)
+_GPIO_WriteLow                        5   (5)
+_GPIO_WriteReverse               >    5   (5)
 
 Stack size: 31
 
@@ -390,7 +390,7 @@ Stack size: 31
   50      + _GPIO_DeInit: (2)
   51      + (_gm_Borrar) ...
   52      + _gm_Init: (4)
-  53      |    + _gm_InicializarPosicionBuffer: (2)
+  53      |    + L3_gm_InicializarPosicionBuffer: (2)
           | 
   54      + (_gm_NotificarCambioDummy) ...
   55      + (_gm_NuevoModo) ...
@@ -398,51 +398,51 @@ Stack size: 31
        
   57 > f_NonHandledInterrupt: (6)
 
-  58   _CLK_CCOCmd --> 13
+  58   L3_gm_InicializarPosicionBuffer --> 53
 
-  59   _CLK_CCOConfig --> 14
+  59   _CLK_CCOCmd --> 13
 
-  60   _CLK_ClockSwitchCmd --> 39
+  60   _CLK_CCOConfig --> 14
 
-  61   _CLK_ClockSwitchConfig --> 40
+  61   _CLK_ClockSwitchCmd --> 39
 
-  62   _CLK_DeInit --> 41
+  62   _CLK_ClockSwitchConfig --> 40
 
-  63   _CLK_GetFlagStatus --> 42
+  63   _CLK_DeInit --> 41
 
-  64   _CLK_HSECmd --> 43
+  64   _CLK_GetFlagStatus --> 42
 
-  65   _CLK_HSICmd --> 44
+  65   _CLK_HSECmd --> 43
 
-  66   _CLK_HSIPrescalerConfig --> 45
+  66   _CLK_HSICmd --> 44
 
-  67   _CLK_LSICmd --> 46
+  67   _CLK_HSIPrescalerConfig --> 45
 
-  68   _CLK_PeripheralClockConfig --> 49
+  68   _CLK_LSICmd --> 46
 
-  69   _CLK_SYSCLKConfig --> 47
+  69   _CLK_PeripheralClockConfig --> 49
 
-  70   _Clock_HSI_Init --> 38
+  70   _CLK_SYSCLKConfig --> 47
 
-  71   _DisableAllPeripherals --> 48
+  71   _Clock_HSI_Init --> 38
 
-  72   _GPIO_DeInit --> 50
+  72   _DisableAllPeripherals --> 48
 
-  73   _GPIO_Init --> 16
+  73   _GPIO_DeInit --> 50
 
-  74   _GPIO_ReadInputPin --> 29
+  74   _GPIO_Init --> 16
 
-  75   _GPIO_WriteHigh --> 35
+  75   _GPIO_ReadInputPin --> 29
 
-  76   _GPIO_WriteLow --> 33
+  76   _GPIO_WriteHigh --> 35
 
-  77   _Output10mhz_Init --> 15
+  77   _GPIO_WriteLow --> 33
 
-  78   _gm_Borrar: (6)
-  79      + _gm_InicializarPosicionBuffer --> 53
+  78   _Output10mhz_Init --> 15
+
+  79   _gm_Borrar: (6)
+  80      + L3_gm_InicializarPosicionBuffer --> 53
        
-  80   _gm_InicializarPosicionBuffer --> 53
-
   81   _gm_Init --> 52
 
   82   _gm_NotificarCambioDummy: (2)
@@ -450,7 +450,7 @@ Stack size: 31
   83   _gm_NuevoModo: (2)
 
   84   _gm_Registrar: (6)
-  85      + (_gm_Borrar) --> 78
+  85      + (_gm_Borrar) --> 79
   86      + (_gm_Init) --> 52
   87      + (_gm_NotificarCambioDummy) --> 82
   88      + (_gm_NuevoModo) --> 83
@@ -820,7 +820,6 @@ __vectab                         00008000   defined in Debug\stm8_interrupt_vect
 _exit                            000080dd   defined in D:\Programas\CosmicC\CXSTM8\Lib\crtsi0.sm8 section .text
 _gm_Borrar                       000082a3   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
-_gm_InicializarPosicionBuffer    000082b2   defined in Debug\gestormodo.o section .text
 _gm_Init                         00008256   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
 _gm_NotificarCambioDummy         000082b1   defined in Debug\gestormodo.o section .text

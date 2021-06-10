@@ -4,7 +4,9 @@
 /**
 
 @file GestorModo.h
-@brief Definicion de los elementos para la gestion de modo
+@brief Definicion de las funcione necesarias para la gestion 
+       del modo de funcionamiento para poder tener control sobre 
+			 los elementos a controlar.
 @author Supernach
 @date 6/2021
 
@@ -50,10 +52,14 @@ void gm_Borrar( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
 */
 void gm_NuevoModo(void);
 
+/**
+@brief Cada elemento tiene que definir una funcion de notificacion.
+			 Sino para eso he creado esta.
+*/
 void gm_NotificarCambioDummy(void);
 
 
 
-void gm_InicializarPosicionBuffer( ModoSensor_t* posicion );
+static void gm_InicializarPosicionBuffer( ModoSensor_t* posicion );
 
 #endif

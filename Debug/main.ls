@@ -22,7 +22,7 @@
  355                     ; 72 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
  358  0019 ae0080        	ldw	x,#128
  359  001c cd0000        	call	_Clock_HSI_Init
- 361  001f               L102:
+ 361  001f               L302:
  362                     ; 83 	testSensor.idSensor = 0;
  366  001f 3f08          	clr	_testSensor
  367                     ; 84 	testSensor.Modo.Medicion = true;
@@ -125,11 +125,11 @@
  506  00d7 ae0008        	ldw	x,#_testSensor
  507  00da 92cd1e        	call	[_Modo+18.w]
  509  00dd 85            	popw	x
- 510  00de               L342:
+ 510  00de               L542:
  514  00de ae0064        	ldw	x,#100
  515  00e1 1f01          	ldw	(OFST-1,sp),x
- 518  00e3 2008          	jra	L352
- 519  00e5               L742:
+ 518  00e3 2008          	jra	L552
+ 519  00e5               L152:
  520                     ; 27 	_asm("nop\n $N:\n decw X\n jrne $L\n nop\n ", __ticks);  
  524  00e5 ae14d4        	ldw	x,#5332
  526  00e8 9d            nop
@@ -138,15 +138,15 @@
  529  00ea 26fd           jrne L6
  530  00ec 9d             nop
  531                      
- 533  00ed               L352:
+ 533  00ed               L552:
  534                     ; 38 	while ( __ms-- )
  536  00ed 1e01          	ldw	x,(OFST-1,sp)
  537  00ef 1d0001        	subw	x,#1
  538  00f2 1f01          	ldw	(OFST-1,sp),x
  539  00f4 1c0001        	addw	x,#1
  541  00f7 a30000        	cpw	x,#0
- 542  00fa 26e9          	jrne	L742
- 543  00fc 20e0          	jra	L342
+ 542  00fa 26e9          	jrne	L152
+ 543  00fc 20e0          	jra	L542
  710                     	xdef	_main
  711                     	switch	.ubsct
  712  0000               _testSensor2:
