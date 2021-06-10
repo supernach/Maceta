@@ -15,7 +15,7 @@
 #include "stm8s.h"
 #include "stdbool.h"
 
-#define NUMERO_MAX_MODOS 4 //Numero maximo de modos a gestionar
+#define gm_NUMERO_MAX_MODOS 4 //Numero maximo de modos a gestionar
 
 /**
 @brief Modo de funcionamiento para los elementos. Define estados
@@ -56,7 +56,7 @@ typedef struct sModoSensor
 
 typedef struct sGestorModoDatos
 {
-	ModoSensor_t Modos[NUMERO_MAX_MODOS];
+	ModoSensor_t Modos[gm_NUMERO_MAX_MODOS];
 } GestorModoDatos_t;
 
 /**

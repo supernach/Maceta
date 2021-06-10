@@ -2,11 +2,12 @@
 
 void gm_Init( GestorModoDatos_t* gestorModoDatos )
 {
-	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[0]);
-	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[1]);
-	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[2]);
-	gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[3]);
+	uint8_t indice = 0;
 	
+	for( indice; indice < gm_NUMERO_MAX_MODOS; indice++)
+	{
+		gm_InicializarPosicionBuffer(&gestorModoDatos->Modos[indice]);
+	}
 }
 
 /*void gm_Sensor_Init( ModoSensor_t* sensor )
@@ -25,9 +26,9 @@ void gm_Init( GestorModoDatos_t* gestorModoDatos )
 
 void gm_Registrar( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos )
 {
-	if( sensor->idSensor < NUMERO_MAX_MODOS )
+	if( sensor->idSensor < gm_NUMERO_MAX_MODOS )
 	{
-		if( gestorModoDatos->Modos[sensor->idSensor].idSensor == ( NUMERO_MAX_MODOS + 1 ) )
+		if( gestorModoDatos->Modos[sensor->idSensor].idSensor == ( gm_NUMERO_MAX_MODOS + 1 ) )
 		{			
 			gestorModoDatos->Modos[sensor->idSensor] = *sensor;
 			gestorModoDatos->Modos[sensor->idSensor].NotificarCambio();
@@ -63,7 +64,7 @@ void gm_NotificarCambioDummy(void)
 
 static void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
 {
-	posicion->idSensor = ( NUMERO_MAX_MODOS + 1 );
+	posicion->idSensor = ( gm_NUMERO_MAX_MODOS + 1 );
 	posicion->Modo.Medicion = 0;
 	posicion->Modo.Calibracion = 0;
 	posicion->Modo.Taraje = 0;
