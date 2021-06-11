@@ -37,6 +37,8 @@ void gm_Registrar( uint8_t idSensor, void ( *notificarCambio )(), GestorModoDato
 		{
 			//Modo ya ocupado
 		}
+		
+		gestorModoDatos->Modos[idSensor].NotificarCambio();
 	}
 	else
 	{

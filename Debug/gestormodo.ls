@@ -60,7 +60,7 @@
  353       00000000      OFST:	set	0
  356                     ; 28 	if( gm_SENSOR_VALIDO(idSensor) ) 
  358  0035 a104          	cp	a,#4
- 359  0037 2438          	jruge	L112
+ 359  0037 2444          	jruge	L112
  360                     ; 30 		if( gm_ESTA_LIBRE(gestorModoDatos->Modos[idSensor].idSensor) )
  362  0039 97            	ld	xl,a
  363  003a a604          	ld	a,#4
@@ -68,7 +68,7 @@
  365  003d 72fb06        	addw	x,(OFST+6,sp)
  366  0040 f6            	ld	a,(x)
  367  0041 a105          	cp	a,#5
- 368  0043 262c          	jrne	L112
+ 368  0043 262c          	jrne	L702
  369                     ; 32 			gestorModoDatos->Modos[idSensor].idSensor = idSensor;
  371  0045 7b01          	ld	a,(OFST+1,sp)
  372  0047 97            	ld	xl,a
@@ -95,107 +95,116 @@
  396  006a 72fb06        	addw	x,(OFST+6,sp)
  397  006d 1604          	ldw	y,(OFST+4,sp)
  398  006f ef02          	ldw	(2,x),y
- 400  0071               L112:
- 401                     ; 46 }
- 404  0071 84            	pop	a
- 405  0072 81            	ret
- 465                     ; 48 void gm_Borrar( uint8_t idSensor, GestorModoDatos_t* gestorModoDatos )
- 465                     ; 49 {
- 466                     	switch	.text
- 467  0073               _gm_Borrar:
- 469  0073 88            	push	a
- 470  0074 89            	pushw	x
- 471       00000002      OFST:	set	2
- 474                     ; 50 	if( gm_SENSOR_VALIDO(idSensor) )
- 476  0075 a104          	cp	a,#4
- 477  0077 2420          	jruge	L152
- 478                     ; 52 		gm_InicializarPosicionBuffer( &gestorModoDatos->Modos[idSensor] );
- 481  0079 97            	ld	xl,a
- 482  007a a604          	ld	a,#4
- 483  007c 42            	mul	x,a
- 484  007d 72fb06        	addw	x,(OFST+4,sp)
- 485  0080 1f01          	ldw	(OFST-1,sp),x
- 487                     ; 10 	posicion->idSensor = ( gm_NUMERO_MAX_MODOS + 1 );
- 489  0082 1e01          	ldw	x,(OFST-1,sp)
- 490  0084 a605          	ld	a,#5
- 491  0086 f7            	ld	(x),a
- 492                     ; 11 	posicion->Modo = gm_RESET;
- 494  0087 1e01          	ldw	x,(OFST-1,sp)
- 495  0089 5c            	incw	x
- 496  008a 90ae0003      	ldw	y,#_gm_RESET
- 497  008e a601          	ld	a,#1
- 498  0090 cd0000        	call	c_xymov
- 500                     ; 12 	posicion->NotificarCambio = NULL;
- 502  0093 1e01          	ldw	x,(OFST-1,sp)
- 503  0095 905f          	clrw	y
- 504  0097 ef02          	ldw	(2,x),y
- 505  0099               L152:
- 506                     ; 58 }
- 509  0099 5b03          	addw	sp,#3
- 510  009b 81            	ret
- 568                     ; 60 void gm_NuevoModo(uint8_t idSensor, Modo_t* nuevoModo, GestorModoDatos_t* gestorModoDatos)
- 568                     ; 61 {
- 569                     	switch	.text
- 570  009c               _gm_NuevoModo:
- 572  009c 88            	push	a
- 573       00000000      OFST:	set	0
- 576                     ; 62 	if( gm_SENSOR_VALIDO(idSensor) )
- 578  009d a104          	cp	a,#4
- 579  009f 2438          	jruge	L513
- 580                     ; 64 		if( !gm_ESTA_LIBRE(gestorModoDatos->Modos[idSensor].idSensor) )
- 582  00a1 97            	ld	xl,a
- 583  00a2 a604          	ld	a,#4
- 584  00a4 42            	mul	x,a
- 585  00a5 72fb06        	addw	x,(OFST+6,sp)
- 586  00a8 f6            	ld	a,(x)
- 587  00a9 a105          	cp	a,#5
- 588  00ab 272c          	jreq	L513
- 589                     ; 66 			gestorModoDatos->Modos[idSensor].Modo = *nuevoModo;
- 591  00ad 7b01          	ld	a,(OFST+1,sp)
- 592  00af 97            	ld	xl,a
- 593  00b0 a604          	ld	a,#4
- 594  00b2 42            	mul	x,a
- 595  00b3 72fb06        	addw	x,(OFST+6,sp)
- 596  00b6 5c            	incw	x
- 597  00b7 1604          	ldw	y,(OFST+4,sp)
- 598  00b9 a601          	ld	a,#1
- 599  00bb cd0000        	call	c_xymov
- 601                     ; 68 			if( !IS_NULL(gestorModoDatos->Modos[idSensor].NotificarCambio) )
- 603  00be 7b01          	ld	a,(OFST+1,sp)
- 604  00c0 97            	ld	xl,a
- 605  00c1 a604          	ld	a,#4
- 606  00c3 42            	mul	x,a
- 607  00c4 72fb06        	addw	x,(OFST+6,sp)
- 608  00c7 e603          	ld	a,(3,x)
- 609  00c9 ea02          	or	a,(2,x)
- 610  00cb 270c          	jreq	L513
- 611                     ; 70 				gestorModoDatos->Modos[idSensor].NotificarCambio();
- 613  00cd 7b01          	ld	a,(OFST+1,sp)
- 614  00cf 97            	ld	xl,a
- 615  00d0 a604          	ld	a,#4
- 616  00d2 42            	mul	x,a
- 617  00d3 72fb06        	addw	x,(OFST+6,sp)
- 618  00d6 ee02          	ldw	x,(2,x)
- 619  00d8 fd            	call	(x)
- 621  00d9               L513:
- 622                     ; 82 }
- 625  00d9 84            	pop	a
- 626  00da 81            	ret
- 650                     ; 84 void gm_NotificarCambioDummy()
- 650                     ; 85 {
- 651                     	switch	.text
- 652  00db               _gm_NotificarCambioDummy:
- 656                     ; 87 }
- 659  00db 81            	ret
- 714                     	xdef	_gm_NotificarCambioDummy
- 715                     	xdef	_gm_NuevoModo
- 716                     	xdef	_gm_Borrar
- 717                     	xdef	_gm_Registrar
- 718                     	xdef	_gm_Init
- 719                     	xdef	_gm_RESET
- 720                     	xdef	_gm_TARAJE
- 721                     	xdef	_gm_CALIBRACION
- 722                     	xdef	_gm_MEDICION
- 723                     	xref.b	c_x
- 742                     	xref	c_xymov
- 743                     	end
+ 400  0071               L702:
+ 401                     ; 41 		gestorModoDatos->Modos[idSensor].NotificarCambio();
+ 403  0071 7b01          	ld	a,(OFST+1,sp)
+ 404  0073 97            	ld	xl,a
+ 405  0074 a604          	ld	a,#4
+ 406  0076 42            	mul	x,a
+ 407  0077 72fb06        	addw	x,(OFST+6,sp)
+ 408  007a ee02          	ldw	x,(2,x)
+ 409  007c fd            	call	(x)
+ 412  007d               L112:
+ 413                     ; 48 }
+ 416  007d 84            	pop	a
+ 417  007e 81            	ret
+ 477                     ; 50 void gm_Borrar( uint8_t idSensor, GestorModoDatos_t* gestorModoDatos )
+ 477                     ; 51 {
+ 478                     	switch	.text
+ 479  007f               _gm_Borrar:
+ 481  007f 88            	push	a
+ 482  0080 89            	pushw	x
+ 483       00000002      OFST:	set	2
+ 486                     ; 52 	if( gm_SENSOR_VALIDO(idSensor) )
+ 488  0081 a104          	cp	a,#4
+ 489  0083 2420          	jruge	L152
+ 490                     ; 54 		gm_InicializarPosicionBuffer( &gestorModoDatos->Modos[idSensor] );
+ 493  0085 97            	ld	xl,a
+ 494  0086 a604          	ld	a,#4
+ 495  0088 42            	mul	x,a
+ 496  0089 72fb06        	addw	x,(OFST+4,sp)
+ 497  008c 1f01          	ldw	(OFST-1,sp),x
+ 499                     ; 10 	posicion->idSensor = ( gm_NUMERO_MAX_MODOS + 1 );
+ 501  008e 1e01          	ldw	x,(OFST-1,sp)
+ 502  0090 a605          	ld	a,#5
+ 503  0092 f7            	ld	(x),a
+ 504                     ; 11 	posicion->Modo = gm_RESET;
+ 506  0093 1e01          	ldw	x,(OFST-1,sp)
+ 507  0095 5c            	incw	x
+ 508  0096 90ae0003      	ldw	y,#_gm_RESET
+ 509  009a a601          	ld	a,#1
+ 510  009c cd0000        	call	c_xymov
+ 512                     ; 12 	posicion->NotificarCambio = NULL;
+ 514  009f 1e01          	ldw	x,(OFST-1,sp)
+ 515  00a1 905f          	clrw	y
+ 516  00a3 ef02          	ldw	(2,x),y
+ 517  00a5               L152:
+ 518                     ; 60 }
+ 521  00a5 5b03          	addw	sp,#3
+ 522  00a7 81            	ret
+ 580                     ; 62 void gm_NuevoModo(uint8_t idSensor, Modo_t* nuevoModo, GestorModoDatos_t* gestorModoDatos)
+ 580                     ; 63 {
+ 581                     	switch	.text
+ 582  00a8               _gm_NuevoModo:
+ 584  00a8 88            	push	a
+ 585       00000000      OFST:	set	0
+ 588                     ; 64 	if( gm_SENSOR_VALIDO(idSensor) )
+ 590  00a9 a104          	cp	a,#4
+ 591  00ab 2438          	jruge	L513
+ 592                     ; 66 		if( !gm_ESTA_LIBRE(gestorModoDatos->Modos[idSensor].idSensor) )
+ 594  00ad 97            	ld	xl,a
+ 595  00ae a604          	ld	a,#4
+ 596  00b0 42            	mul	x,a
+ 597  00b1 72fb06        	addw	x,(OFST+6,sp)
+ 598  00b4 f6            	ld	a,(x)
+ 599  00b5 a105          	cp	a,#5
+ 600  00b7 272c          	jreq	L513
+ 601                     ; 68 			gestorModoDatos->Modos[idSensor].Modo = *nuevoModo;
+ 603  00b9 7b01          	ld	a,(OFST+1,sp)
+ 604  00bb 97            	ld	xl,a
+ 605  00bc a604          	ld	a,#4
+ 606  00be 42            	mul	x,a
+ 607  00bf 72fb06        	addw	x,(OFST+6,sp)
+ 608  00c2 5c            	incw	x
+ 609  00c3 1604          	ldw	y,(OFST+4,sp)
+ 610  00c5 a601          	ld	a,#1
+ 611  00c7 cd0000        	call	c_xymov
+ 613                     ; 70 			if( !IS_NULL(gestorModoDatos->Modos[idSensor].NotificarCambio) )
+ 615  00ca 7b01          	ld	a,(OFST+1,sp)
+ 616  00cc 97            	ld	xl,a
+ 617  00cd a604          	ld	a,#4
+ 618  00cf 42            	mul	x,a
+ 619  00d0 72fb06        	addw	x,(OFST+6,sp)
+ 620  00d3 e603          	ld	a,(3,x)
+ 621  00d5 ea02          	or	a,(2,x)
+ 622  00d7 270c          	jreq	L513
+ 623                     ; 72 				gestorModoDatos->Modos[idSensor].NotificarCambio();
+ 625  00d9 7b01          	ld	a,(OFST+1,sp)
+ 626  00db 97            	ld	xl,a
+ 627  00dc a604          	ld	a,#4
+ 628  00de 42            	mul	x,a
+ 629  00df 72fb06        	addw	x,(OFST+6,sp)
+ 630  00e2 ee02          	ldw	x,(2,x)
+ 631  00e4 fd            	call	(x)
+ 633  00e5               L513:
+ 634                     ; 84 }
+ 637  00e5 84            	pop	a
+ 638  00e6 81            	ret
+ 662                     ; 86 void gm_NotificarCambioDummy()
+ 662                     ; 87 {
+ 663                     	switch	.text
+ 664  00e7               _gm_NotificarCambioDummy:
+ 668                     ; 89 }
+ 671  00e7 81            	ret
+ 726                     	xdef	_gm_NotificarCambioDummy
+ 727                     	xdef	_gm_NuevoModo
+ 728                     	xdef	_gm_Borrar
+ 729                     	xdef	_gm_Registrar
+ 730                     	xdef	_gm_Init
+ 731                     	xdef	_gm_RESET
+ 732                     	xdef	_gm_TARAJE
+ 733                     	xdef	_gm_CALIBRACION
+ 734                     	xdef	_gm_MEDICION
+ 735                     	xref.b	c_x
+ 754                     	xref	c_xymov
+ 755                     	end

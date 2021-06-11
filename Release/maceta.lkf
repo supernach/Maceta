@@ -52,6 +52,7 @@ crtsi0.sm8
 #<BEGIN OBJECT_FILES>
 Release\main.o
 Release\clock.o
+Release\dht11.o
 Release\gestormodo.o
 Release\gpio.o
 Release\isensor.o

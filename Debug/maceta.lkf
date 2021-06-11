@@ -52,6 +52,7 @@ crtsi0.sm8
 #<BEGIN OBJECT_FILES>
 Debug\main.o
 Debug\clock.o
+Debug\dht11.o
 Debug\gestormodo.o
 Debug\gpio.o
 Debug\isensor.o

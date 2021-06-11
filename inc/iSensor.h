@@ -14,12 +14,13 @@ typedef struct sISensorDatos
 typedef struct sISensor
 {
 	iSensorDatos_t Datos;
-	void ( *Init )( iSensorDatos_t* sensor, uint8_t id, GestorModo_t* gm );
+	void ( *Init )( iSensorDatos_t* sensor, void ( *notificacion )(), uint8_t id, GestorModo_t* gm );
 	void ( *ModoCambiado )(void);
 } iSensor_t;
 
 
-void iSd_Init( iSensorDatos_t* sensor, uint8_t id, GestorModo_t* gm);
+void iSd_Init( iSensorDatos_t* sensor, void ( *notificacion )(), uint8_t id, GestorModo_t* gm);
+void iSd_ModoCambiado( void );
 
 
 

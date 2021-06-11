@@ -2,12 +2,12 @@
 #define MACETA_DEF_H
 
 #include "gestormodo.h"
-#include "isensor.h"
+#include "dht11.h"
 
 
 GestorModo_t Modo;
-iSensor_t DHT11;
-iSensor_t DHT22;
+DHT11_t sensor1;
+DHT11_t sensor2;
 
 
 

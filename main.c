@@ -87,10 +87,10 @@ static @inline void InicializacionGestionModos(void)
 	Modo.Init(&Modo.Datos);
 }
 
-static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, uint8_t id)
+static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, void ( *modoCambiado )(), uint8_t id)
 {
 	sensor->Init = iSd_Init;
-	sensor->Init(&sensor->Datos, id, &Modo);
+	sensor->Init(&sensor->Datos, modoCambiado, id, &Modo);
 }
 
 /**
@@ -101,10 +101,12 @@ static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, uint8_t id
 */
 static @inline void InicializacionModoSensores(void)
 {
-	aux_InicializacionModoSensores(&DHT11, 0);
-	aux_InicializacionModoSensores(&DHT22, 1);
+	aux_InicializacionModoSensores(&sensor1.sistema, &dht11_ModoCambiado, 0);
 	
-	Modo.NuevoModo(DHT11.Datos.ID, &gm_MEDICION, &Modo.Datos);
+	aux_InicializacionModoSensores(&sensor2.sistema, &dht11_ModoCambiado, 1);
+
+	
+	Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 }
 
 
@@ -135,13 +137,13 @@ static @inline void Inicializacion_Total(void)
 
 int main()
 {
-	Modo_t valorModo;
+	//Modo_t valorModo;
 	Inicializacion_Total();
 	
 	
 	while (1)
 	{
-		valorModo = *(DHT11.Datos.Modo);
+		//valorModo = *(DHT11.Datos.Modo);
 		_delay_ms(100);
 	}
 }
