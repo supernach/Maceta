@@ -15,7 +15,6 @@
 #include "stm8s.h"
 #include "gestormododef.h"
 
-//gm_Medicion.Medicion = true;
 
 /**
 @brief Inicializacion del buffer de datos del gestor de modo
