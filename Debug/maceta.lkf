@@ -54,6 +54,7 @@ Debug\main.o
 Debug\clock.o
 Debug\gestormodo.o
 Debug\gpio.o
+Debug\isensor.o
 Debug\stm8s_adc1.o
 Debug\stm8s_awu.o
 Debug\stm8s_beep.o

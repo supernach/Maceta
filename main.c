@@ -8,6 +8,7 @@
 #include "gpio.h"
 #include "clock.h"
 
+#include "utils.h"
 #include "maceta_def.h"
  
  
@@ -16,15 +17,6 @@
 */
 #define FCLK 16000000 //Velocidad frecuencia cpu(depende de la configuracion)
 #include "delay.h"
-
-/**
-/* @brief Elementos del sistema
-*/
-ModoSensor_t testSensor;
-ModoSensor_t testSensor1;
-ModoSensor_t testSensor2;
-ModoSensor_t testSensor3;
-ModoSensor_t testSensor4;
 
 /**
 /*
@@ -79,18 +71,26 @@ static @inline void InicializacionCLK(void)
 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
 }
 
-static @inline void aux_InicializacionModoSensores(ModoSensor_t* sensor, uint8_t id)
+/**
+/*
+/* @brief Inicializacion gestor modos
+/*
+/*
+*/
+static @inline void InicializacionGestionModos(void)
 {
-	sensor->idSensor = id;
-	sensor->Modo.Medicion = false;
-	sensor->Modo.Calibracion = false;
-	sensor->Modo.Taraje = false;
-	sensor->Modo.Res4 = false;
-	sensor->Modo.Res5 = false;
-	sensor->Modo.Res6 = false;
-	sensor->Modo.Res7 = false;
-	sensor->Modo.Res8 = false;
-	sensor->NotificarCambio = gm_NotificarCambioDummy;
+	Modo.Registrar = gm_Registrar;
+	Modo.Borrar = gm_Borrar;
+	Modo.NuevoModo = gm_NuevoModo;
+	Modo.Init = gm_Init;
+	
+	Modo.Init(&Modo.Datos);
+}
+
+static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, uint8_t id)
+{
+	sensor->Init = iSd_Init;
+	sensor->Init(&sensor->Datos, id, &Modo);
 }
 
 /**
@@ -101,41 +101,13 @@ static @inline void aux_InicializacionModoSensores(ModoSensor_t* sensor, uint8_t
 */
 static @inline void InicializacionModoSensores(void)
 {
-	aux_InicializacionModoSensores(&testSensor, 0);
-	aux_InicializacionModoSensores(&testSensor1, 1);
-	aux_InicializacionModoSensores(&testSensor2, 2);
-	aux_InicializacionModoSensores(&testSensor3, 3);
-	aux_InicializacionModoSensores(&testSensor4, 4);
+	aux_InicializacionModoSensores(&DHT11, 0);
+	aux_InicializacionModoSensores(&DHT22, 1);
 	
-	
+	Modo.NuevoModo(DHT11.Datos.ID, &gm_Medicion, &Modo.Datos);
 }
 
-/**
-/*
-/* @brief Inicializacion gestor modos
-/*
-/*
-*/
-static @inline void InicializacionGestionModos(void)
-{
-	InicializacionModoSensores();
-	
-	Modo.Registrar = gm_Registrar;
-	Modo.Borrar = gm_Borrar;
-	Modo.NuevoModo = gm_NuevoModo;
-	Modo.Init = gm_Init;
-	
-	Modo.Init( &Modo.Datos );
-	Modo.Registrar( &testSensor, &Modo.Datos );
-	Modo.Registrar( &testSensor1, &Modo.Datos );
-	Modo.Registrar( &testSensor2, &Modo.Datos );
-	Modo.Registrar( &testSensor3, &Modo.Datos );
-	Modo.Registrar( &testSensor4, &Modo.Datos );
-	
-	Modo.Borrar( &testSensor, &Modo.Datos );
-	
-	//Modo.NuevoModo(&testSensor1, 0b10000000);
-}
+
 
 /**
 /*
@@ -151,6 +123,7 @@ static @inline void Inicializacion_Total(void)
 	InicializacionGPIO();
 	
 	InicializacionGestionModos();
+	InicializacionModoSensores();
 }
 
 /**
@@ -162,11 +135,13 @@ static @inline void Inicializacion_Total(void)
 
 int main()
 {
+	Modo_t valorModo;
 	Inicializacion_Total();
 	
 	
 	while (1)
 	{
+		valorModo = *(DHT11.Datos.Modo);
 		_delay_ms(100);
 	}
 }

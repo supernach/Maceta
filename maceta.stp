@@ -74,7 +74,7 @@ String.6.0=2021,6,5,20,17,37
 String.100.0=$(TargetFName)
 String.101.0=
 String.102.0=
-String.103.0=.\;..\..\librerias\spl_lib\inc;..\..\librerias\spl_lib\src;..\..\librerias\propias\utils;..\..\librerias\propias\utils\stm8s\inc;..\..\librerias\propias\utils\stm8s\src;..\..\librerias\propias\gestor_modo;inc;
+String.103.0=.\;inc;src;
 
 [Root.Config.0.Settings.2]
 String.2.0=
@@ -155,7 +155,7 @@ Int.108=0
 String.6.0=2021,6,5,20,17,37
 String.100.0=$(TargetFName)
 String.101.0=
-String.103.0=.\;..\..\librerias\spl_lib\inc;..\..\librerias\spl_lib\src;..\..\librerias\propias\utils;..\..\librerias\propias\utils\stm8s\inc;..\..\librerias\propias\utils\stm8s\src;..\..\librerias\propias\gestor_modo;inc;
+String.103.0=.\;inc;src;
 
 [Root.Config.1.Settings.2]
 String.2.0=
@@ -217,7 +217,7 @@ String.6.0=2021,6,5,20,17,37
 [Root.Source Files]
 ElemType=Folder
 PathName=Source Files
-Child=Root.Source Files...\..\librerias\propias\gestor_modo\gestormodo.c
+Child=Root.Source Files.main.c
 Next=Root.Include Files
 Config.0=Root.Source Files.Config.0
 Config.1=Root.Source Files.Config.1
@@ -288,109 +288,114 @@ String.4.0=
 String.5.0=
 String.6.0=2021,6,5,20,17,37
 
-[Root.Source Files...\..\librerias\propias\gestor_modo\gestormodo.c]
-ElemType=File
-PathName=..\..\librerias\propias\gestor_modo\gestormodo.c
-Next=Root.Source Files...\..\librerias\propias\utils\stm8s\src\clock.c
-
-[Root.Source Files...\..\librerias\propias\utils\stm8s\src\clock.c]
-ElemType=File
-PathName=..\..\librerias\propias\utils\stm8s\src\clock.c
-Next=Root.Source Files...\..\librerias\propias\utils\stm8s\src\gpio.c
-
-[Root.Source Files...\..\librerias\propias\utils\stm8s\src\gpio.c]
-ElemType=File
-PathName=..\..\librerias\propias\utils\stm8s\src\gpio.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_adc1.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_adc1.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_adc1.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_awu.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_awu.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_awu.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_beep.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_beep.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_beep.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_clk.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_clk.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_clk.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_exti.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_exti.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_exti.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_flash.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_flash.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_flash.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_gpio.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_gpio.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_gpio.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_i2c.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_i2c.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_i2c.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_itc.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_itc.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_itc.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_iwdg.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_iwdg.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_iwdg.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_rst.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_rst.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_rst.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_spi.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_spi.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_spi.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim1.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim1.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_tim1.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim2.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim2.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_tim2.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim4.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_tim4.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_tim4.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_uart1.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_uart1.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_uart1.c
-Next=Root.Source Files...\..\librerias\spl_lib\src\stm8s_wwdg.c
-
-[Root.Source Files...\..\librerias\spl_lib\src\stm8s_wwdg.c]
-ElemType=File
-PathName=..\..\librerias\spl_lib\src\stm8s_wwdg.c
-Next=Root.Source Files.main.c
-
 [Root.Source Files.main.c]
 ElemType=File
 PathName=main.c
+Next=Root.Source Files.src\clock.c
+
+[Root.Source Files.src\clock.c]
+ElemType=File
+PathName=src\clock.c
+Next=Root.Source Files.src\gestormodo.c
+
+[Root.Source Files.src\gestormodo.c]
+ElemType=File
+PathName=src\gestormodo.c
+Next=Root.Source Files.src\gpio.c
+
+[Root.Source Files.src\gpio.c]
+ElemType=File
+PathName=src\gpio.c
+Next=Root.Source Files.src\sensorprueba.c
+
+[Root.Source Files.src\sensorprueba.c]
+ElemType=File
+PathName=src\sensorprueba.c
+Next=Root.Source Files.src\stm8s_adc1.c
+
+[Root.Source Files.src\stm8s_adc1.c]
+ElemType=File
+PathName=src\stm8s_adc1.c
+Next=Root.Source Files.src\stm8s_awu.c
+
+[Root.Source Files.src\stm8s_awu.c]
+ElemType=File
+PathName=src\stm8s_awu.c
+Next=Root.Source Files.src\stm8s_beep.c
+
+[Root.Source Files.src\stm8s_beep.c]
+ElemType=File
+PathName=src\stm8s_beep.c
+Next=Root.Source Files.src\stm8s_clk.c
+
+[Root.Source Files.src\stm8s_clk.c]
+ElemType=File
+PathName=src\stm8s_clk.c
+Next=Root.Source Files.src\stm8s_exti.c
+
+[Root.Source Files.src\stm8s_exti.c]
+ElemType=File
+PathName=src\stm8s_exti.c
+Next=Root.Source Files.src\stm8s_flash.c
+
+[Root.Source Files.src\stm8s_flash.c]
+ElemType=File
+PathName=src\stm8s_flash.c
+Next=Root.Source Files.src\stm8s_gpio.c
+
+[Root.Source Files.src\stm8s_gpio.c]
+ElemType=File
+PathName=src\stm8s_gpio.c
+Next=Root.Source Files.src\stm8s_i2c.c
+
+[Root.Source Files.src\stm8s_i2c.c]
+ElemType=File
+PathName=src\stm8s_i2c.c
+Next=Root.Source Files.src\stm8s_itc.c
+
+[Root.Source Files.src\stm8s_itc.c]
+ElemType=File
+PathName=src\stm8s_itc.c
+Next=Root.Source Files.src\stm8s_iwdg.c
+
+[Root.Source Files.src\stm8s_iwdg.c]
+ElemType=File
+PathName=src\stm8s_iwdg.c
+Next=Root.Source Files.src\stm8s_rst.c
+
+[Root.Source Files.src\stm8s_rst.c]
+ElemType=File
+PathName=src\stm8s_rst.c
+Next=Root.Source Files.src\stm8s_spi.c
+
+[Root.Source Files.src\stm8s_spi.c]
+ElemType=File
+PathName=src\stm8s_spi.c
+Next=Root.Source Files.src\stm8s_tim1.c
+
+[Root.Source Files.src\stm8s_tim1.c]
+ElemType=File
+PathName=src\stm8s_tim1.c
+Next=Root.Source Files.src\stm8s_tim2.c
+
+[Root.Source Files.src\stm8s_tim2.c]
+ElemType=File
+PathName=src\stm8s_tim2.c
+Next=Root.Source Files.src\stm8s_tim4.c
+
+[Root.Source Files.src\stm8s_tim4.c]
+ElemType=File
+PathName=src\stm8s_tim4.c
+Next=Root.Source Files.src\stm8s_uart1.c
+
+[Root.Source Files.src\stm8s_uart1.c]
+ElemType=File
+PathName=src\stm8s_uart1.c
+Next=Root.Source Files.src\stm8s_wwdg.c
+
+[Root.Source Files.src\stm8s_wwdg.c]
+ElemType=File
+PathName=src\stm8s_wwdg.c
 Next=Root.Source Files.stm8_interrupt_vector.c
 
 [Root.Source Files.stm8_interrupt_vector.c]
@@ -400,7 +405,7 @@ PathName=stm8_interrupt_vector.c
 [Root.Include Files]
 ElemType=Folder
 PathName=Include Files
-Child=Root.Include Files...\..\librerias\propias\gestor_modo\gestormodo.h
+Child=Root.Include Files.inc\clock.h
 Config.0=Root.Include Files.Config.0
 Config.1=Root.Include Files.Config.1
 
@@ -470,131 +475,136 @@ String.4.0=
 String.5.0=
 String.6.0=2021,6,5,20,17,37
 
-[Root.Include Files...\..\librerias\propias\gestor_modo\gestormodo.h]
+[Root.Include Files.inc\clock.h]
 ElemType=File
-PathName=..\..\librerias\propias\gestor_modo\gestormodo.h
-Next=Root.Include Files...\..\librerias\propias\gestor_modo\gestormododef.h
+PathName=inc\clock.h
+Next=Root.Include Files.inc\delay.h
 
-[Root.Include Files...\..\librerias\propias\gestor_modo\gestormododef.h]
+[Root.Include Files.inc\delay.h]
 ElemType=File
-PathName=..\..\librerias\propias\gestor_modo\gestormododef.h
-Next=Root.Include Files...\..\librerias\propias\utils\delay.h
+PathName=inc\delay.h
+Next=Root.Include Files.inc\gestormodo.h
 
-[Root.Include Files...\..\librerias\propias\utils\delay.h]
+[Root.Include Files.inc\gestormodo.h]
 ElemType=File
-PathName=..\..\librerias\propias\utils\delay.h
-Next=Root.Include Files...\..\librerias\propias\utils\pin_def.h
+PathName=inc\gestormodo.h
+Next=Root.Include Files.inc\gestormododef.h
 
-[Root.Include Files...\..\librerias\propias\utils\pin_def.h]
+[Root.Include Files.inc\gestormododef.h]
 ElemType=File
-PathName=..\..\librerias\propias\utils\pin_def.h
-Next=Root.Include Files...\..\librerias\propias\utils\stm8s\inc\clock.h
+PathName=inc\gestormododef.h
+Next=Root.Include Files.inc\gpio.h
 
-[Root.Include Files...\..\librerias\propias\utils\stm8s\inc\clock.h]
+[Root.Include Files.inc\gpio.h]
 ElemType=File
-PathName=..\..\librerias\propias\utils\stm8s\inc\clock.h
-Next=Root.Include Files...\..\librerias\propias\utils\stm8s\inc\gpio.h
-
-[Root.Include Files...\..\librerias\propias\utils\stm8s\inc\gpio.h]
-ElemType=File
-PathName=..\..\librerias\propias\utils\stm8s\inc\gpio.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_adc1.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_adc1.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_adc1.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_awu.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_awu.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_awu.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_beep.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_beep.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_beep.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_clk.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_clk.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_clk.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_conf.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_conf.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_conf.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_exti.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_exti.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_exti.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_flash.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_flash.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_flash.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_gpio.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_gpio.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_gpio.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_i2c.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_i2c.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_i2c.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_itc.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_itc.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_itc.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_iwdg.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_iwdg.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_iwdg.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_rst.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_rst.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_rst.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_spi.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_spi.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_spi.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim1.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim1.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_tim1.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim2.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim2.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_tim2.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim4.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_tim4.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_tim4.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_uart1.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_uart1.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_uart1.h
-Next=Root.Include Files...\..\librerias\spl_lib\inc\stm8s_wwdg.h
-
-[Root.Include Files...\..\librerias\spl_lib\inc\stm8s_wwdg.h]
-ElemType=File
-PathName=..\..\librerias\spl_lib\inc\stm8s_wwdg.h
+PathName=inc\gpio.h
 Next=Root.Include Files.inc\maceta_def.h
 
 [Root.Include Files.inc\maceta_def.h]
 ElemType=File
 PathName=inc\maceta_def.h
+Next=Root.Include Files.inc\pin_def.h
+
+[Root.Include Files.inc\pin_def.h]
+ElemType=File
+PathName=inc\pin_def.h
+Next=Root.Include Files.inc\sensorprueba.h
+
+[Root.Include Files.inc\sensorprueba.h]
+ElemType=File
+PathName=inc\sensorprueba.h
+Next=Root.Include Files.inc\stm8s.h
+
+[Root.Include Files.inc\stm8s.h]
+ElemType=File
+PathName=inc\stm8s.h
+Next=Root.Include Files.inc\stm8s_adc1.h
+
+[Root.Include Files.inc\stm8s_adc1.h]
+ElemType=File
+PathName=inc\stm8s_adc1.h
+Next=Root.Include Files.inc\stm8s_awu.h
+
+[Root.Include Files.inc\stm8s_awu.h]
+ElemType=File
+PathName=inc\stm8s_awu.h
+Next=Root.Include Files.inc\stm8s_beep.h
+
+[Root.Include Files.inc\stm8s_beep.h]
+ElemType=File
+PathName=inc\stm8s_beep.h
+Next=Root.Include Files.inc\stm8s_clk.h
+
+[Root.Include Files.inc\stm8s_clk.h]
+ElemType=File
+PathName=inc\stm8s_clk.h
+Next=Root.Include Files.inc\stm8s_conf.h
+
+[Root.Include Files.inc\stm8s_conf.h]
+ElemType=File
+PathName=inc\stm8s_conf.h
+Next=Root.Include Files.inc\stm8s_exti.h
+
+[Root.Include Files.inc\stm8s_exti.h]
+ElemType=File
+PathName=inc\stm8s_exti.h
+Next=Root.Include Files.inc\stm8s_flash.h
+
+[Root.Include Files.inc\stm8s_flash.h]
+ElemType=File
+PathName=inc\stm8s_flash.h
+Next=Root.Include Files.inc\stm8s_gpio.h
+
+[Root.Include Files.inc\stm8s_gpio.h]
+ElemType=File
+PathName=inc\stm8s_gpio.h
+Next=Root.Include Files.inc\stm8s_i2c.h
+
+[Root.Include Files.inc\stm8s_i2c.h]
+ElemType=File
+PathName=inc\stm8s_i2c.h
+Next=Root.Include Files.inc\stm8s_itc.h
+
+[Root.Include Files.inc\stm8s_itc.h]
+ElemType=File
+PathName=inc\stm8s_itc.h
+Next=Root.Include Files.inc\stm8s_iwdg.h
+
+[Root.Include Files.inc\stm8s_iwdg.h]
+ElemType=File
+PathName=inc\stm8s_iwdg.h
+Next=Root.Include Files.inc\stm8s_rst.h
+
+[Root.Include Files.inc\stm8s_rst.h]
+ElemType=File
+PathName=inc\stm8s_rst.h
+Next=Root.Include Files.inc\stm8s_spi.h
+
+[Root.Include Files.inc\stm8s_spi.h]
+ElemType=File
+PathName=inc\stm8s_spi.h
+Next=Root.Include Files.inc\stm8s_tim1.h
+
+[Root.Include Files.inc\stm8s_tim1.h]
+ElemType=File
+PathName=inc\stm8s_tim1.h
+Next=Root.Include Files.inc\stm8s_tim2.h
+
+[Root.Include Files.inc\stm8s_tim2.h]
+ElemType=File
+PathName=inc\stm8s_tim2.h
+Next=Root.Include Files.inc\stm8s_tim4.h
+
+[Root.Include Files.inc\stm8s_tim4.h]
+ElemType=File
+PathName=inc\stm8s_tim4.h
+Next=Root.Include Files.inc\stm8s_uart1.h
+
+[Root.Include Files.inc\stm8s_uart1.h]
+ElemType=File
+PathName=inc\stm8s_uart1.h
+Next=Root.Include Files.inc\stm8s_wwdg.h
+
+[Root.Include Files.inc\stm8s_wwdg.h]
+ElemType=File
+PathName=inc\stm8s_wwdg.h

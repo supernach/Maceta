@@ -15,8 +15,11 @@
 #include "stm8s.h"
 #include "stdbool.h"
 
-#define gm_NUMERO_MAX_MODOS 4 //Numero maximo de modos a gestionar
+#include "utils.h"
 
+#define gm_NUMERO_MAX_MODOS 4 //Numero maximo de modos a gestionar
+#define gm_ESTA_LIBRE( id ) ( ( id == ( gm_NUMERO_MAX_MODOS + 1 ) ) ? ( true ) : ( false ) )
+#define gm_SENSOR_VALIDO( id ) ( ( id < gm_NUMERO_MAX_MODOS ) ? ( true ) : ( false ) )
 /**
 @brief Modo de funcionamiento para los elementos. Define estados
 			 que se activan externamente desde una tft por ejemplo.
@@ -37,6 +40,10 @@ typedef struct sModo
 /*Modo_t gm_Medicion;
 Modo_t gm_Calibracion;
 Modo_t gm_Taraje;*/
+extern Modo_t gm_Medicion;
+extern Modo_t gm_Calibracion;
+extern Modo_t gm_Taraje;
+extern Modo_t gm_Reset;
 
 /**
 @brief Definicion del elemento sensor y sus distintas partes.
@@ -51,7 +58,7 @@ typedef struct sModoSensor
 	uint8_t idSensor;
 	Modo_t Modo;
 	
-	void ( *NotificarCambio )(uint8_t idSensor);
+	void ( *NotificarCambio )(void);
 } ModoSensor_t;
 
 /**
@@ -76,9 +83,9 @@ typedef struct sGestorModo
 {
 	GestorModoDatos_t Datos;
 	
-	void ( *Registrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
-	void ( *Borrar )( ModoSensor_t* sensor, GestorModoDatos_t* gestorModoDatos );
-	void ( *NuevoModo )(ModoSensor_t* sensor, Modo_t* nuevoModo);
+	void ( *Registrar )( uint8_t idSensor, void ( *notificarCambio )(), GestorModoDatos_t* gestorModoDatos );
+	void ( *Borrar )( uint8_t idSensor, GestorModoDatos_t* gestorModoDatos );
+	void ( *NuevoModo )(uint8_t idSensor, Modo_t* nuevoModo, GestorModoDatos_t* gestorModoDatos);
 	void ( *Init )( GestorModoDatos_t* gestorModoDatos );
 } GestorModo_t;
 
