@@ -48,8 +48,4 @@ void gm_NuevoModo(uint8_t idSensor, Modo_t* nuevoModo, GestorModoDatos_t* gestor
 void gm_NotificarCambioDummy(void);
 
 
-
-//static void gm_InicializarPosicionBuffer( ModoSensor_t* posicion );
-//static bool gm_ComprobarIdLibre(uint8_t idSensor);
-
 #endif
