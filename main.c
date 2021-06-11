@@ -104,7 +104,7 @@ static @inline void InicializacionModoSensores(void)
 	aux_InicializacionModoSensores(&DHT11, 0);
 	aux_InicializacionModoSensores(&DHT22, 1);
 	
-	Modo.NuevoModo(DHT11.Datos.ID, &gm_Medicion, &Modo.Datos);
+	Modo.NuevoModo(DHT11.Datos.ID, &gm_MEDICION, &Modo.Datos);
 }
 
 

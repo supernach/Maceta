@@ -1,75 +1,75 @@
    1                     ; C Compiler for STM8 (COSMIC Software)
    2                     ; Parser V4.12.3 - 05 Nov 2020
    3                     ; Generator (Limited) V4.5.1 - 29 Sep 2020
- 584                     ; 142 int main()
- 584                     ; 143 {
+ 584                     ; 136 int main()
+ 584                     ; 137 {
  586                     	switch	.text
  587  0000               _main:
  589  0000 5203          	subw	sp,#3
  590       00000003      OFST:	set	3
- 593                     ; 36 	GPIO_DeInit(GPIOA);
+ 593                     ; 30 	GPIO_DeInit(GPIOA);
  597  0002 ae5000        	ldw	x,#20480
  598  0005 cd0000        	call	_GPIO_DeInit
- 600                     ; 37 	GPIO_DeInit(GPIOB);
+ 600                     ; 31 	GPIO_DeInit(GPIOB);
  602  0008 ae5005        	ldw	x,#20485
  603  000b cd0000        	call	_GPIO_DeInit
- 605                     ; 38 	GPIO_DeInit(GPIOC);
+ 605                     ; 32 	GPIO_DeInit(GPIOC);
  607  000e ae500a        	ldw	x,#20490
  608  0011 cd0000        	call	_GPIO_DeInit
- 610                     ; 39 	GPIO_DeInit(GPIOD);
+ 610                     ; 33 	GPIO_DeInit(GPIOD);
  612  0014 ae500f        	ldw	x,#20495
  613  0017 cd0000        	call	_GPIO_DeInit
- 615                     ; 77 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
+ 615                     ; 71 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
  618  001a ae0080        	ldw	x,#128
  619  001d cd0000        	call	_Clock_HSI_Init
  621  0020               L342:
- 622                     ; 88 	Modo.Registrar = gm_Registrar;
+ 622                     ; 82 	Modo.Registrar = gm_Registrar;
  625  0020 ae0000        	ldw	x,#_gm_Registrar
  626  0023 bf1e          	ldw	_Modo+16,x
- 627                     ; 89 	Modo.Borrar = gm_Borrar;
+ 627                     ; 83 	Modo.Borrar = gm_Borrar;
  629  0025 ae0000        	ldw	x,#_gm_Borrar
  630  0028 bf20          	ldw	_Modo+18,x
- 631                     ; 90 	Modo.NuevoModo = gm_NuevoModo;
+ 631                     ; 84 	Modo.NuevoModo = gm_NuevoModo;
  633  002a ae0000        	ldw	x,#_gm_NuevoModo
  634  002d bf22          	ldw	_Modo+20,x
- 635                     ; 91 	Modo.Init = gm_Init;
+ 635                     ; 85 	Modo.Init = gm_Init;
  637  002f ae0000        	ldw	x,#_gm_Init
  638  0032 bf24          	ldw	_Modo+22,x
- 639                     ; 93 	Modo.Init(&Modo.Datos);
+ 639                     ; 87 	Modo.Init(&Modo.Datos);
  641  0034 ae000e        	ldw	x,#_Modo
  642  0037 92cd24        	call	[_Modo+22.w]
- 644                     ; 145 	Inicializacion_Total();
- 648                     ; 98 	sensor->Init = iSd_Init;
+ 644                     ; 139 	Inicializacion_Total();
+ 648                     ; 92 	sensor->Init = iSd_Init;
  650  003a ae0000        	ldw	x,#_iSd_Init
  651  003d bf0a          	ldw	_DHT11+3,x
- 652                     ; 99 	sensor->Init(&sensor->Datos, id, &Modo);
+ 652                     ; 93 	sensor->Init(&sensor->Datos, id, &Modo);
  654  003f ae000e        	ldw	x,#_Modo
  655  0042 89            	pushw	x
  656  0043 4b00          	push	#0
  657  0045 ae0007        	ldw	x,#_DHT11
  658  0048 92cd0a        	call	[_DHT11+3.w]
  660  004b 5b03          	addw	sp,#3
- 661                     ; 145 	Inicializacion_Total();
- 664                     ; 98 	sensor->Init = iSd_Init;
+ 661                     ; 139 	Inicializacion_Total();
+ 664                     ; 92 	sensor->Init = iSd_Init;
  666  004d ae0000        	ldw	x,#_iSd_Init
  667  0050 bf03          	ldw	_DHT22+3,x
- 668                     ; 99 	sensor->Init(&sensor->Datos, id, &Modo);
+ 668                     ; 93 	sensor->Init(&sensor->Datos, id, &Modo);
  670  0052 ae000e        	ldw	x,#_Modo
  671  0055 89            	pushw	x
  672  0056 4b01          	push	#1
  673  0058 ae0000        	ldw	x,#_DHT22
  674  005b 92cd03        	call	[_DHT22+3.w]
  676  005e 5b03          	addw	sp,#3
- 677                     ; 113 	Modo.NuevoModo(DHT11.Datos.ID, &gm_Medicion, &Modo.Datos);
+ 677                     ; 107 	Modo.NuevoModo(DHT11.Datos.ID, &gm_MEDICION, &Modo.Datos);
  679  0060 ae000e        	ldw	x,#_Modo
  680  0063 89            	pushw	x
- 681  0064 ae0000        	ldw	x,#_gm_Medicion
+ 681  0064 ae0000        	ldw	x,#_gm_MEDICION
  682  0067 89            	pushw	x
  683  0068 b607          	ld	a,_DHT11
  684  006a 92cd22        	call	[_Modo+20.w]
  686  006d 5b04          	addw	sp,#4
  687  006f               L134:
- 688                     ; 150 		valorModo = *(DHT11.Datos.Modo);
+ 688                     ; 144 		valorModo = *(DHT11.Datos.Modo);
  690  006f 96            	ldw	x,sp
  691  0070 1c0003        	addw	x,#OFST+0
  692  0073 90be08        	ldw	y,_DHT11+1
@@ -112,7 +112,7 @@
  754                     	xref	_gm_Borrar
  755                     	xref	_gm_Registrar
  756                     	xref	_gm_Init
- 757                     	xref.b	_gm_Medicion
+ 757                     	xref.b	_gm_MEDICION
  758                     	xref	_Clock_HSI_Init
  759                     	xref	_GPIO_DeInit
  760                     	xref.b	c_x

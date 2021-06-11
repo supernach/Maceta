@@ -37,10 +37,10 @@ typedef struct sModo
 	bool Res8;
 } Modo_t;
 
-extern Modo_t gm_Medicion;
-extern Modo_t gm_Calibracion;
-extern Modo_t gm_Taraje;
-extern Modo_t gm_Reset;
+extern Modo_t gm_MEDICION;
+extern Modo_t gm_CALIBRACION;
+extern Modo_t gm_TARAJE;
+extern Modo_t gm_RESET;
 
 /**
 @brief Definicion del elemento sensor y sus distintas partes.

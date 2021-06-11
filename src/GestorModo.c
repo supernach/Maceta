@@ -1,21 +1,14 @@
 #include "gestormodo.h"
 
-Modo_t gm_Medicion = {1, 0, 0, 0, 0, 0, 0, 0};
-Modo_t gm_Calibracion = {0, 1, 0, 0, 0, 0, 0, 0};
-Modo_t gm_Taraje = {0, 0, 1, 0, 0, 0, 0, 0};
-Modo_t gm_Reset = {0, 0, 0, 0, 0, 0, 0, 0};
+Modo_t gm_MEDICION = {1, 0, 0, 0, 0, 0, 0, 0};
+Modo_t gm_CALIBRACION = {0, 1, 0, 0, 0, 0, 0, 0};
+Modo_t gm_TARAJE = {0, 0, 1, 0, 0, 0, 0, 0};
+Modo_t gm_RESET = {0, 0, 0, 0, 0, 0, 0, 0};
 
 static @inline void gm_InicializarPosicionBuffer( ModoSensor_t* posicion )
 {
 	posicion->idSensor = ( gm_NUMERO_MAX_MODOS + 1 );
-	posicion->Modo.Medicion = 0;
-	posicion->Modo.Calibracion = 0;
-	posicion->Modo.Taraje = 0;
-	posicion->Modo.Res4 = 0;
-	posicion->Modo.Res5 = 0;
-	posicion->Modo.Res6 = 0;
-	posicion->Modo.Res7 = 0;
-	posicion->Modo.Res8 = 0;
+	posicion->Modo = gm_RESET;
 	posicion->NotificarCambio = NULL;
 }
 
@@ -37,7 +30,7 @@ void gm_Registrar( uint8_t idSensor, void ( *notificarCambio )(), GestorModoDato
 		if( gm_ESTA_LIBRE(gestorModoDatos->Modos[idSensor].idSensor) )
 		{	
 			gestorModoDatos->Modos[idSensor].idSensor = idSensor;
-			gestorModoDatos->Modos[idSensor].Modo = gm_Reset;
+			gestorModoDatos->Modos[idSensor].Modo = gm_RESET;
 			gestorModoDatos->Modos[idSensor].NotificarCambio = notificarCambio;
 		}
 		else
