@@ -23,18 +23,6 @@
 */
 void gm_Init( GestorModoDatos_t* gestorModoDatos );
 
-
-
-
-/**
-@brief Inicializacion del sensor
-@param sensor estructura del sensor
-*/
-//void gm_Sensor_Init( ModoSensor_t* sensor );
-
-
-
-
 /**
 @brief Registrar nuevo elemento en el gestor de modos
 @param sensor Configuracion del nuevo elemento
