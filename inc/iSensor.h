@@ -26,8 +26,6 @@ typedef struct sISensor
 	void ( *Init )( iSensorDatos_t* sensor, void ( *notificacion )(), uint8_t id, GestorModo_t* gm );
 } iSensor_t;
 
-
-
 /**
 /*@brief Funcion Init por defecto. Rellena los datos del sensor
 /*       y lo registra en el gestor de modo.

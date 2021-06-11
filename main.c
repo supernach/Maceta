@@ -7,16 +7,10 @@
 #include "pin_def.h"
 #include "gpio.h"
 #include "clock.h"
-
 #include "utils.h"
 #include "maceta_def.h"
- 
- 
-/**
-/* @brief configuracion reloj sistema.
-*/
-#define FCLK 16000000 //Velocidad frecuencia cpu(depende de la configuracion)
-#include "delay.h"
+
+void tarea_Sensor1(void);
 
 /**
 /*
@@ -43,7 +37,8 @@ static @inline void DeInitAllGPIO(void)
 
 static @inline void Pin_Init(void)
 {
-	
+	sensor1.pin.Pin = GPIO_PIN_2;
+	sensor1.pin.Puerto = GPIOD;
 }
 
 /**
@@ -103,10 +98,10 @@ static @inline void InicializacionModoSensores(void)
 {
 	aux_InicializacionModoSensores(&sensor1.sistema, &dht11_ModoCambiado, 0);
 	
-	aux_InicializacionModoSensores(&sensor2.sistema, &dht11_ModoCambiado, 1);
+	//aux_InicializacionModoSensores(&sensor2.sistema, &dht11_ModoCambiado, 1);
 
 	
-	Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
+	//Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 }
 
 
@@ -139,11 +134,20 @@ int main()
 {
 	//Modo_t valorModo;
 	Inicializacion_Total();
+	_delay_ms(1000);
 	
 	
 	while (1)
 	{
+		tarea_Sensor1();
 		//valorModo = *(DHT11.Datos.Modo);
 		_delay_ms(100);
 	}
+}
+
+void tarea_Sensor1(void)
+{
+	dht11_ComenzarTransmision( &sensor1 );
+	dht11_LeerDatos( &sensor1 );
+	dht11_CerrarConexion( &sensor1 );
 }
