@@ -37,9 +37,6 @@ typedef struct sModo
 	bool Res8;
 } Modo_t;
 
-/*Modo_t gm_Medicion;
-Modo_t gm_Calibracion;
-Modo_t gm_Taraje;*/
 extern Modo_t gm_Medicion;
 extern Modo_t gm_Calibracion;
 extern Modo_t gm_Taraje;
