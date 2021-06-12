@@ -14,7 +14,9 @@ typedef enum
 	dht11_MIDIENDO_H,
 	dht11_MIDIENDO_T,
 	dht11_CERRANDO_CONEXION,
-	dht11_SLEEP
+	dht11_SLEEP,
+	dht11_ESPERA_BAJO,
+	dht11_ESPERA_ALTO
 } DHT11_Estado_e;
 
 typedef struct sDht11_SI

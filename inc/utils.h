@@ -9,6 +9,9 @@
 #define IS_NULL(val) ((val == NULL) ? true : false)
 
 
+/**
+/* @brief velocidad reloj del sistema
+*/
 #define FCLK 16000000 //Velocidad frecuencia cpu(depende de la configuracion)
 #ifndef FCLK
 #warning FCLK is not defined! 
@@ -16,7 +19,7 @@
 
 
 /**
-@brief La verdad esto es magia
+@brief Funcion delay
 */
 
 static @inline void _delay_cycl( unsigned short __ticks )

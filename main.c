@@ -37,8 +37,10 @@ static @inline void DeInitAllGPIO(void)
 
 static @inline void Pin_Init(void)
 {
-	sensor1.pin.Pin = GPIO_PIN_2;
-	sensor1.pin.Puerto = GPIOD;
+	sensor1.pin.Pin = GPIO_PIN_3;
+	sensor1.pin.Puerto = GPIOA;
+	Output2mhz_Init( &sensor1.pin );
+	Output_1( &sensor1.pin );
 }
 
 /**
@@ -90,18 +92,16 @@ static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, void ( *mo
 
 /**
 /*
-/* @brief Inicializacion modo de elementos
+/* @brief Inicializacion modo de elementos. Aqui se registra el sensor
+/*        en el gestor de modo. Se le indica cual sera la funcion
+/*        a llamar cuando se cambie el modo
 /*
 /*
 */
 static @inline void InicializacionModoSensores(void)
 {
 	aux_InicializacionModoSensores(&sensor1.sistema, &dht11_ModoCambiado, 0);
-	
-	//aux_InicializacionModoSensores(&sensor2.sistema, &dht11_ModoCambiado, 1);
-
-	
-	//Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
+	Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 }
 
 
@@ -132,22 +132,30 @@ static @inline void Inicializacion_Total(void)
 
 int main()
 {
-	//Modo_t valorModo;
 	Inicializacion_Total();
 	_delay_ms(1000);
-	
 	
 	while (1)
 	{
 		tarea_Sensor1();
-		//valorModo = *(DHT11.Datos.Modo);
-		_delay_ms(100);
+		_delay_ms(10);
 	}
 }
 
 void tarea_Sensor1(void)
 {
-	dht11_ComenzarTransmision( &sensor1 );
-	dht11_LeerDatos( &sensor1 );
-	dht11_CerrarConexion( &sensor1 );
+	if( sensor1.sistema.Datos.Modo->Medicion )
+	{
+		dht11_ComenzarTransmision( &sensor1 );
+	
+	/*	if( sensor1.Datos.estado == dht11_CONEXION_OK )
+		{
+			dht11_LeerDatos( &sensor1 );
+		}
+		else
+		{
+			//mal plan
+		}
+		dht11_CerrarConexion( &sensor1 );*/
+	}
 }
