@@ -52,12 +52,12 @@
  647  0033 cd0000        	call	_Input_FL_Init
  650  0036 2006          	jra	L753
  651  0038               L553:
- 652                     ; 67 		sensor->Datos.estado = dht11_ESPERA_BAJO;
+ 652                     ; 59 		sensor->Datos.estado = dht11_ESPERA_BAJO;
  654  0038 1e01          	ldw	x,(OFST+1,sp)
  655  003a a607          	ld	a,#7
  656  003c e70d          	ld	(13,x),a
  657  003e               L753:
- 658                     ; 65 	while( !IsActive( &sensor->pin ) )
+ 658                     ; 57 	while( !IsActive( &sensor->pin ) )
  660  003e 1e01          	ldw	x,(OFST+1,sp)
  661  0040 1c0005        	addw	x,#5
  662  0043 cd0000        	call	_IsActive
@@ -65,36 +65,36 @@
  665  0047 27ef          	jreq	L553
  667  0049 2006          	jra	L563
  668  004b               L363:
- 669                     ; 79 		sensor->Datos.estado = dht11_ESPERA_ALTO;
+ 669                     ; 65 		sensor->Datos.estado = dht11_ESPERA_ALTO;
  671  004b 1e01          	ldw	x,(OFST+1,sp)
  672  004d a608          	ld	a,#8
  673  004f e70d          	ld	(13,x),a
  674  0051               L563:
- 675                     ; 77 	while( IsActive( &sensor->pin ) )
+ 675                     ; 63 	while( IsActive( &sensor->pin ) )
  677  0051 1e01          	ldw	x,(OFST+1,sp)
  678  0053 1c0005        	addw	x,#5
  679  0056 cd0000        	call	_IsActive
  681  0059 4d            	tnz	a
  682  005a 26ef          	jrne	L363
- 683                     ; 93 	sensor->Datos.estado = dht11_CONEXION_OK;
+ 683                     ; 69 	sensor->Datos.estado = dht11_CONEXION_OK;
  685  005c 1e01          	ldw	x,(OFST+1,sp)
  686  005e a602          	ld	a,#2
  687  0060 e70d          	ld	(13,x),a
- 688                     ; 94 	return true;
+ 688                     ; 70 	return true;
  690  0062 a601          	ld	a,#1
  693  0064 85            	popw	x
  694  0065 81            	ret
- 935                     ; 97 void dht11_LeerDatos( DHT11_t* sensor )
- 935                     ; 98 {
+ 935                     ; 73 void dht11_LeerDatos( DHT11_t* sensor )
+ 935                     ; 74 {
  936                     	switch	.text
  937  0066               _dht11_LeerDatos:
  939  0066 89            	pushw	x
  940  0067 5205          	subw	sp,#5
  941       00000005      OFST:	set	5
- 944                     ; 99 	sensor->Datos.estado = dht11_MIDIENDO_H;
+ 944                     ; 75 	sensor->Datos.estado = dht11_MIDIENDO_H;
  946  0069 a603          	ld	a,#3
  947  006b e70d          	ld	(13,x),a
- 948                     ; 100 	sensor->Datos.UltimaLectura.H_Entero = leerByte(&sensor->pin);
+ 948                     ; 76 	sensor->Datos.UltimaLectura.H_Entero = leerByte(&sensor->pin);
  951  006d 1c0005        	addw	x,#5
  952  0070 1f04          	ldw	(OFST-1,sp),x
  954                     ; 5 	uint8_t contador = 0;
@@ -155,11 +155,11 @@
 1042  00b0 e70c          	ld	(12,x),a
 1045  00b2 1e06          	ldw	x,(OFST+1,sp)
 1046  00b4 e60c          	ld	a,(12,x)
-1047                     ; 102 	sensor->Datos.estado = dht11_MIDIENDO_H;
+1047                     ; 78 	sensor->Datos.estado = dht11_MIDIENDO_H;
 1049  00b6 1e06          	ldw	x,(OFST+1,sp)
 1050  00b8 a603          	ld	a,#3
 1051  00ba e70d          	ld	(13,x),a
-1052                     ; 103 	sensor->Datos.UltimaLectura.H_Decimal = leerByte(&sensor->pin);
+1052                     ; 79 	sensor->Datos.UltimaLectura.H_Decimal = leerByte(&sensor->pin);
 1055  00bc 1e06          	ldw	x,(OFST+1,sp)
 1056  00be 1c0005        	addw	x,#5
 1057  00c1 1f04          	ldw	(OFST-1,sp),x
@@ -221,11 +221,11 @@
 1147  0101 e70b          	ld	(11,x),a
 1150  0103 1e06          	ldw	x,(OFST+1,sp)
 1151  0105 e60b          	ld	a,(11,x)
-1152                     ; 105 	sensor->Datos.estado = dht11_MIDIENDO_T;
+1152                     ; 81 	sensor->Datos.estado = dht11_MIDIENDO_T;
 1154  0107 1e06          	ldw	x,(OFST+1,sp)
 1155  0109 a604          	ld	a,#4
 1156  010b e70d          	ld	(13,x),a
-1157                     ; 106 	sensor->Datos.UltimaLectura.T_Entero = leerByte(&sensor->pin);
+1157                     ; 82 	sensor->Datos.UltimaLectura.T_Entero = leerByte(&sensor->pin);
 1160  010d 1e06          	ldw	x,(OFST+1,sp)
 1161  010f 1c0005        	addw	x,#5
 1162  0112 1f04          	ldw	(OFST-1,sp),x
@@ -287,11 +287,11 @@
 1252  0152 e70a          	ld	(10,x),a
 1255  0154 1e06          	ldw	x,(OFST+1,sp)
 1256  0156 e60a          	ld	a,(10,x)
-1257                     ; 108 	sensor->Datos.estado = dht11_MIDIENDO_T;
+1257                     ; 84 	sensor->Datos.estado = dht11_MIDIENDO_T;
 1259  0158 1e06          	ldw	x,(OFST+1,sp)
 1260  015a a604          	ld	a,#4
 1261  015c e70d          	ld	(13,x),a
-1262                     ; 109 	sensor->Datos.UltimaLectura.T_Decimal = leerByte(&sensor->pin);
+1262                     ; 85 	sensor->Datos.UltimaLectura.T_Decimal = leerByte(&sensor->pin);
 1265  015e 1e06          	ldw	x,(OFST+1,sp)
 1266  0160 1c0005        	addw	x,#5
 1267  0163 1f04          	ldw	(OFST-1,sp),x
@@ -353,7 +353,7 @@
 1357  01a3 e709          	ld	(9,x),a
 1360  01a5 1e06          	ldw	x,(OFST+1,sp)
 1361  01a7 e609          	ld	a,(9,x)
-1362                     ; 111 	sensor->Datos.UltimaLectura.CRC = leerByte(&sensor->pin);
+1362                     ; 87 	sensor->Datos.UltimaLectura.CRC = leerByte(&sensor->pin);
 1365  01a9 1e06          	ldw	x,(OFST+1,sp)
 1366  01ab 1c0005        	addw	x,#5
 1367  01ae 1f04          	ldw	(OFST-1,sp),x
@@ -415,31 +415,31 @@
 1457  01ee e708          	ld	(8,x),a
 1460  01f0 1e06          	ldw	x,(OFST+1,sp)
 1461  01f2 e608          	ld	a,(8,x)
-1462                     ; 113 	sensor->Datos.estado = dht11_CERRANDO_CONEXION;
+1462                     ; 89 	sensor->Datos.estado = dht11_CERRANDO_CONEXION;
 1464  01f4 1e06          	ldw	x,(OFST+1,sp)
 1465  01f6 a605          	ld	a,#5
 1466  01f8 e70d          	ld	(13,x),a
-1467                     ; 116 }
+1467                     ; 92 }
 1470  01fa 5b07          	addw	sp,#7
 1471  01fc 81            	ret
-1511                     ; 118 void dht11_CerrarConexion( DHT11_t* sensor )
-1511                     ; 119 {
+1511                     ; 94 void dht11_CerrarConexion( DHT11_t* sensor )
+1511                     ; 95 {
 1512                     	switch	.text
 1513  01fd               _dht11_CerrarConexion:
 1515  01fd 89            	pushw	x
 1516       00000000      OFST:	set	0
-1519                     ; 120 	Output2mhz_Init( &sensor->pin );
+1519                     ; 96 	Output2mhz_Init( &sensor->pin );
 1521  01fe 1c0005        	addw	x,#5
 1522  0201 cd0000        	call	_Output2mhz_Init
-1524                     ; 121 	Output_1( &sensor->pin );
+1524                     ; 97 	Output_1( &sensor->pin );
 1526  0204 1e01          	ldw	x,(OFST+1,sp)
 1527  0206 1c0005        	addw	x,#5
 1528  0209 cd0000        	call	_Output_1
-1530                     ; 122 	sensor->Datos.estado = dht11_SLEEP;
+1530                     ; 98 	sensor->Datos.estado = dht11_SLEEP;
 1532  020c 1e01          	ldw	x,(OFST+1,sp)
 1533  020e a606          	ld	a,#6
 1534  0210 e70d          	ld	(13,x),a
-1535                     ; 123 }
+1535                     ; 99 }
 1538  0212 85            	popw	x
 1539  0213 81            	ret
 1552                     	xdef	_dht11_CerrarConexion

@@ -50,45 +50,21 @@ bool dht11_ComenzarTransmision( DHT11_t* sensor )
 	
 	Output_1( &sensor->pin );
 	_delay_us( 20 ); //Espero tiempo para empezar a recibir datos
-	//Output_0( &sensor->pin );
+	
 	
 	Input_FL_Init( &sensor->pin ); //Configuro como entrada para leer
-	//_delay_us( 40 ); //Espero tiempo para empezar a recibir datos
-	
-	/*if( IsActive( &sensor->pin ) ) 
-	{
-		sensor->Datos.estado = dht11_SLEEP;
-		return false; //Compruebo que este en nivel bajo
-	}*/
-	//_delay_us( 80 );
 	
 	while( !IsActive( &sensor->pin ) )
 	{
 		sensor->Datos.estado = dht11_ESPERA_BAJO;
 	}
 	
-	/*if( !IsActive( &sensor->pin ) ) 
-	{
-		sensor->Datos.estado = dht11_SLEEP;
-		return false; //Compruebo que este en nivel alto
-	}
-	_delay_us( 45 );*/
 	
 	while( IsActive( &sensor->pin ) )
 	{
 		sensor->Datos.estado = dht11_ESPERA_ALTO;
 	}
 	
-	/*if( IsActive( &sensor->pin ) ) 
-	{
-		sensor->Datos.estado = dht11_SLEEP;
-		return false;
-	}
-	else 
-	{
-		sensor->Datos.estado = dht11_CONEXION_OK;
-		return true;
-	}*/
 	
 	sensor->Datos.estado = dht11_CONEXION_OK;
 	return true;
