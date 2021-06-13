@@ -39,6 +39,28 @@ void dht11_ModoCambiado( void )
 	
 }
 
+void dht11_Lectura( DHT11_t* sensor )
+{
+	if( dht11_ComenzarTransmision( sensor ) )
+	{
+		if( dht11_LeerDatos( sensor ) )
+		{
+			sensor->Datos.estado = dht11_CERRANDO_CONEXION;
+		}
+		else
+		{
+			sensor->Datos.estado = dht11_FALLO_AL_LEER;//fallo crc
+		}
+	}
+	else
+	{
+		sensor->Datos.estado = dht11_FALLO_AL_COMUNICAR;
+	}
+	
+	dht11_CerrarConexion( sensor );
+	
+}
+
 bool dht11_ComenzarTransmision( DHT11_t* sensor )
 {
 	//_delay_ms(100);
@@ -46,11 +68,7 @@ bool dht11_ComenzarTransmision( DHT11_t* sensor )
 	Output_0( &sensor->pin );
 	
 	sensor->Datos.estado = dht11_COMUNICANDO;
-	_delay_us( 18 ); //Espero tiempo puesta en marcha dht11
-	
-	Output_1( &sensor->pin );
-	_delay_us( 20 ); //Espero tiempo para empezar a recibir datos
-	
+	_delay_ms( 18 ); //Espero tiempo puesta en marcha dht11
 	
 	Input_FL_Init( &sensor->pin ); //Configuro como entrada para leer
 	
@@ -70,8 +88,11 @@ bool dht11_ComenzarTransmision( DHT11_t* sensor )
 	return true;
 }
 
-void dht11_LeerDatos( DHT11_t* sensor )
+bool dht11_LeerDatos( DHT11_t* sensor )
 {
+	uint16_t checkCRC = 0;
+	uint8_t mask = 0b11111111;
+	
 	sensor->Datos.estado = dht11_MIDIENDO_H;
 	sensor->Datos.UltimaLectura.H_Entero = leerByte(&sensor->pin);
 	
@@ -86,15 +107,27 @@ void dht11_LeerDatos( DHT11_t* sensor )
 	
 	sensor->Datos.UltimaLectura.CRC = leerByte(&sensor->pin);
 	
-	sensor->Datos.estado = dht11_CERRANDO_CONEXION;
+	checkCRC = sensor->Datos.UltimaLectura.H_Entero + sensor->Datos.UltimaLectura.H_Decimal + sensor->Datos.UltimaLectura.T_Entero + sensor->Datos.UltimaLectura.T_Decimal;
+	checkCRC &= mask;
 	
-	
+	if( checkCRC == sensor->Datos.UltimaLectura.CRC )
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void dht11_CerrarConexion( DHT11_t* sensor )
 {
 	Output2mhz_Init( &sensor->pin );
 	Output_1( &sensor->pin );
-	sensor->Datos.estado = dht11_SLEEP;
+	
+	if( sensor->Datos.estado == dht11_CERRANDO_CONEXION )
+	{
+		sensor->Datos.estado = dht11_SLEEP;
+	}	
 }
 

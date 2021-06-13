@@ -17,6 +17,7 @@
 			 
 
 #include "stm8s.h"
+#include "stdbool.h"
 #include "pin_def.h"
 
 /**

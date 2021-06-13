@@ -90,34 +90,34 @@
  570  0047 84            	pop	a
  571                     ; 37 }
  574  0048 81            	ret
- 633                     ; 39 bool IsActive(Pin* input)
- 633                     ; 40 {
- 634                     	switch	.text
- 635  0049               _IsActive:
- 639                     ; 41 	if(GPIO_ReadInputPin(input->Puerto, input->Pin)) return 1;
- 641  0049 e602          	ld	a,(2,x)
- 642  004b 88            	push	a
- 643  004c fe            	ldw	x,(x)
- 644  004d cd0000        	call	_GPIO_ReadInputPin
- 646  0050 5b01          	addw	sp,#1
- 647  0052 4d            	tnz	a
- 648  0053 2703          	jreq	L123
- 651  0055 a601          	ld	a,#1
- 654  0057 81            	ret
- 655  0058               L123:
- 656                     ; 42 	else return 0;
- 658  0058 4f            	clr	a
- 661  0059 81            	ret
- 674                     	xdef	_IsActive
- 675                     	xdef	_Output_1
- 676                     	xdef	_Output_0
- 677                     	xdef	_Output10mhz_Init
- 678                     	xdef	_Output2mhz_Init
- 679                     	xdef	_InputInt_Init
- 680                     	xdef	_Input_FL_Init
- 681                     	xdef	_Input_Init
- 682                     	xref	_GPIO_ReadInputPin
- 683                     	xref	_GPIO_WriteLow
- 684                     	xref	_GPIO_WriteHigh
- 685                     	xref	_GPIO_Init
- 704                     	end
+ 613                     ; 39 bool IsActive(Pin* input)
+ 613                     ; 40 {
+ 614                     	switch	.text
+ 615  0049               _IsActive:
+ 619                     ; 41 	if(GPIO_ReadInputPin(input->Puerto, input->Pin)) return true;
+ 621  0049 e602          	ld	a,(2,x)
+ 622  004b 88            	push	a
+ 623  004c fe            	ldw	x,(x)
+ 624  004d cd0000        	call	_GPIO_ReadInputPin
+ 626  0050 5b01          	addw	sp,#1
+ 627  0052 4d            	tnz	a
+ 628  0053 2703          	jreq	L113
+ 631  0055 a601          	ld	a,#1
+ 634  0057 81            	ret
+ 635  0058               L113:
+ 636                     ; 42 	else return false;
+ 638  0058 4f            	clr	a
+ 641  0059 81            	ret
+ 654                     	xdef	_IsActive
+ 655                     	xdef	_Output_1
+ 656                     	xdef	_Output_0
+ 657                     	xdef	_Output10mhz_Init
+ 658                     	xdef	_Output2mhz_Init
+ 659                     	xdef	_InputInt_Init
+ 660                     	xdef	_Input_FL_Init
+ 661                     	xdef	_Input_Init
+ 662                     	xref	_GPIO_ReadInputPin
+ 663                     	xref	_GPIO_WriteLow
+ 664                     	xref	_GPIO_WriteHigh
+ 665                     	xref	_GPIO_Init
+ 684                     	end

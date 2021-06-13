@@ -6,6 +6,8 @@
 #include "gpio.h"
 #include "isensor.h"
 
+typedef struct DHT11_t DHT11_t;
+
 typedef enum
 {
 	dht11_SIN_REGISTRAR,
@@ -16,7 +18,9 @@ typedef enum
 	dht11_CERRANDO_CONEXION,
 	dht11_SLEEP,
 	dht11_ESPERA_BAJO,
-	dht11_ESPERA_ALTO
+	dht11_ESPERA_ALTO,
+	dht11_FALLO_AL_LEER,
+	dht11_FALLO_AL_COMUNICAR
 } DHT11_Estado_e;
 
 typedef struct sDht11_SI
@@ -36,20 +40,23 @@ typedef struct sDht11Datos
 
 
 
-typedef struct sDht11
+/*typedef*/ struct DHT11_t
 {
 	iSensor_t sistema;
 	Pin pin;
 	DHT11_Datos_t Datos;
-} DHT11_t;
+	
+	void ( *Lectura )( DHT11_t* sensor );
+}; //DHT11_t;
 
 
 
 
 void dht11_ModoCambiado( void );
+void dht11_Lectura( DHT11_t* sensor );
 
-bool dht11_ComenzarTransmision(DHT11_t* sensor);
-void dht11_LeerDatos( DHT11_t* sensor );
+bool dht11_ComenzarTransmision( DHT11_t* sensor );
+bool dht11_LeerDatos( DHT11_t* sensor );
 void dht11_CerrarConexion( DHT11_t* sensor );
 
 

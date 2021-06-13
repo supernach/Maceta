@@ -38,6 +38,6 @@ void Output_1(Pin* output)
 
 bool IsActive(Pin* input)
 {
-	if(GPIO_ReadInputPin(input->Puerto, input->Pin)) return 1;
-	else return 0;
+	if(GPIO_ReadInputPin(input->Puerto, input->Pin)) return true;
+	else return false;
 }

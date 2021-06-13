@@ -1,5 +1,5 @@
 
-Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Sat Jun 12 15:55:51 2021
+Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Sun Jun 13 23:35:23 2021
 
 
                                --------
@@ -7,17 +7,17 @@ Map of Debug\maceta.sm8 from link file Debug\maceta.lkf - Sat Jun 12 15:55:51 20
                                --------
 
 start 00008080 end 0000808c length    12 segment .const
-start 00008098 end 00008b5f length  2759 segment .text
+start 00008098 end 00008bd0 length  2872 segment .text
 start 00004000 end 00004000 length     0 segment .eeprom
 start 00000000 end 00000004 length     4 segment .bsct, initialized
 start 00008094 end 00008098 length     4 segment .bsct, from
-start 00000004 end 00000042 length    62 segment .ubsct
-start 00000042 end 00000042 length     0 segment .bit
-start 00000042 end 00000042 length     0 segment .share
+start 00000004 end 00000046 length    66 segment .ubsct
+start 00000046 end 00000046 length     0 segment .bit
+start 00000046 end 00000046 length     0 segment .share
 start 00000100 end 00000100 length     0 segment .data
 start 00000100 end 00000100 length     0 segment .bss
 start 00000000 end 00000eb7 length  3767 segment .info.
-start 00000000 end 00013699 length 79513 segment .debug
+start 00000000 end 000137ca length 79818 segment .debug
 start 00008000 end 00008080 length   128 segment .const
 start 0000808c end 00008094 length     8 segment .init
 
@@ -33,126 +33,126 @@ start 00000004 end 00000004 length     0 section .ubsct
 start 00000000 end 00000034 length    52 section .info.
 
 Debug\main.o:
-start 000080e8 end 000081aa length   194 section .text
-start 00000004 end 00000038 length    52 section .ubsct
-start 00000000 end 00000bbd length  3005 section .debug
+start 000080e8 end 000081a5 length   189 section .text
+start 00000004 end 0000003c length    56 section .ubsct
+start 00000000 end 00000bf3 length  3059 section .debug
 start 00000034 end 0000009e length   106 section .info.
 
 Debug\clock.o:
-start 000081aa end 00008223 length   121 section .text
-start 00000bbd end 00001364 length  1959 section .debug
+start 000081a5 end 0000821e length   121 section .text
+start 00000bf3 end 0000139a length  1959 section .debug
 start 0000009e end 00000109 length   107 section .info.
 
 Debug\dht11.o:
-start 00008223 end 00008437 length   532 section .text
-start 00001364 end 00001e5a length  2806 section .debug
+start 0000821e end 000084a8 length   650 section .text
+start 0000139a end 00001fc2 length  3112 section .debug
 start 00000109 end 00000174 length   107 section .info.
 
 Debug\gestormodo.o:
-start 00008437 end 0000851f length   232 section .text
+start 000084a8 end 00008590 length   232 section .text
 start 00000000 end 00000004 length     4 section .bsct
-start 00001e5a end 00002450 length  1526 section .debug
+start 00001fc2 end 000025b8 length  1526 section .debug
 start 00000174 end 000001e4 length   112 section .info.
 
 Debug\gpio.o:
-start 0000851f end 00008579 length    90 section .text
-start 00002450 end 00002a59 length  1545 section .debug
+start 00008590 end 000085ea length    90 section .text
+start 000025b8 end 00002b8a length  1490 section .debug
 start 000001e4 end 0000024e length   106 section .info.
 
 Debug\isensor.o:
-start 00008579 end 0000859e length    37 section .text
-start 00002a59 end 00002e84 length  1067 section .debug
+start 000085ea end 0000860f length    37 section .text
+start 00002b8a end 00002fb5 length  1067 section .debug
 start 0000024e end 000002bb length   109 section .info.
 
 Debug\stm8s_adc1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00002e84 end 00004475 length  5617 section .debug
+start 00002fb5 end 000045a6 length  5617 section .debug
 start 000002bb end 0000032b length   112 section .info.
 
 Debug\stm8s_awu.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00004475 end 00004a34 length  1471 section .debug
+start 000045a6 end 00004b65 length  1471 section .debug
 start 0000032b end 0000039a length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_beep.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00004a34 end 00004d0f length   731 section .debug
+start 00004b65 end 00004e40 length   731 section .debug
 start 0000039a end 0000040a length   112 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_clk.o:
-start 0000859e end 00008922 length   900 section .text
-start 00004d0f end 0000637e length  5743 section .debug
+start 0000860f end 00008993 length   900 section .text
+start 00004e40 end 000064af length  5743 section .debug
 start 0000040a end 00000479 length   111 section .info.
 start 00008080 end 0000808c length    12 section .const
 
 Debug\stm8s_exti.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000637e end 0000680d length  1167 section .debug
+start 000064af end 0000693e length  1167 section .debug
 start 00000479 end 000004e9 length   112 section .info.
 
 Debug\stm8s_flash.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000680d end 000075ec length  3551 section .debug
+start 0000693e end 0000771d length  3551 section .debug
 start 000004e9 end 0000055a length   113 section .info.
 
 Debug\stm8s_gpio.o:
-start 00008922 end 000089d4 length   178 section .text
-start 000075ec end 00007ff6 length  2570 section .debug
+start 00008993 end 00008a45 length   178 section .text
+start 0000771d end 00008127 length  2570 section .debug
 start 0000055a end 000005ca length   112 section .info.
 
 Debug\stm8s_i2c.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00007ff6 end 00009597 length  5537 section .debug
+start 00008127 end 000096c8 length  5537 section .debug
 start 000005ca end 00000639 length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_itc.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00009597 end 00009b9a length  1539 section .debug
+start 000096c8 end 00009ccb length  1539 section .debug
 start 00000639 end 000006a8 length   111 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_iwdg.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00009b9a end 00009f3c length   930 section .debug
+start 00009ccb end 0000a06d length   930 section .debug
 start 000006a8 end 00000718 length   112 section .info.
 
 Debug\stm8s_rst.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00009f3c end 0000a16b length   559 section .debug
+start 0000a06d end 0000a29c length   559 section .debug
 start 00000718 end 00000787 length   111 section .info.
 
 Debug\stm8s_spi.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000a16b end 0000b0a7 length  3900 section .debug
+start 0000a29c end 0000b1d8 length  3900 section .debug
 start 00000787 end 000007f6 length   111 section .info.
 
 Debug\stm8s_tim1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000b0a7 end 0000f031 length 16266 section .debug
+start 0000b1d8 end 0000f162 length 16266 section .debug
 start 000007f6 end 00000866 length   112 section .info.
 
 Debug\stm8s_tim2.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 0000f031 end 00011345 length  8980 section .debug
+start 0000f162 end 00011476 length  8980 section .debug
 start 00000866 end 000008d6 length   112 section .info.
 
 Debug\stm8s_tim4.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00011345 end 00011efc length  2999 section .debug
+start 00011476 end 0001202d length  2999 section .debug
 start 000008d6 end 00000946 length   112 section .info.
 
 Debug\stm8s_uart1.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 00011efc end 000132e8 length  5100 section .debug
+start 0001202d end 00013419 length  5100 section .debug
 start 00000946 end 000009b7 length   113 section .info.
 start ******** end ******** length     0 section .const *** removed ***
 
 Debug\stm8s_wwdg.o:
 start ******** end ******** length     0 section .text *** removed ***
-start 000132e8 end 0001352e length   582 section .debug
+start 00013419 end 0001365f length   582 section .debug
 start 000009b7 end 00000a27 length   112 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)cmulx.o:
@@ -184,7 +184,7 @@ start ******** end ******** length     0 section .text *** removed ***
 start 00000b43 end 00000b72 length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lreg.o:
-start 00000038 end 0000003c length     4 section .ubsct
+start 0000003c end 00000040 length     4 section .ubsct
 start 00000b72 end 00000ba1 length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lsub.o:
@@ -192,27 +192,27 @@ start ******** end ******** length     0 section .text *** removed ***
 start 00000ba1 end 00000bd0 length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ltor.o:
-start 000089d4 end 000089e6 length    18 section .text
+start 00008a45 end 00008a57 length    18 section .text
 start 00000bd0 end 00000bff length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ludiv.o:
-start 000089e6 end 000089fa length    20 section .text
+start 00008a57 end 00008a6b length    20 section .text
 start 00000bff end 00000c2f length    48 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o:
-start 000089fa end 00008ae5 length   235 section .text
+start 00008a6b end 00008b56 length   235 section .text
 start 00000c2f end 00000c5e length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lgneg.o:
-start 00008ae5 end 00008af8 length    19 section .text
+start 00008b56 end 00008b69 length    19 section .text
 start 00000c5e end 00000c8e length    48 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lneg.o:
-start 00008af8 end 00008b0d length    21 section .text
+start 00008b69 end 00008b7e length    21 section .text
 start 00000c8e end 00000cbd length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)rtol.o:
-start 00008b0d end 00008b1f length    18 section .text
+start 00008b7e end 00008b90 length    18 section .text
 start 00000cbd end 00000cec length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)sdivx.o:
@@ -228,20 +228,20 @@ start ******** end ******** length     0 section .text *** removed ***
 start 00000d4b end 00000d7a length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xreg.o:
-start 0000003c end 0000003f length     3 section .ubsct
+start 00000040 end 00000043 length     3 section .ubsct
 start 00000d7a end 00000da9 length    47 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xymov.o:
-start 00008b1f end 00008b5e length    63 section .text
+start 00008b90 end 00008bcf length    63 section .text
 start 00000da9 end 00000dd9 length    48 section .info.
 
 (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)yreg.o:
-start 0000003f end 00000042 length     3 section .ubsct
+start 00000043 end 00000046 length     3 section .ubsct
 start 00000dd9 end 00000e08 length    47 section .info.
 
 Debug\stm8_interrupt_vector.o:
-start 00008b5e end 00008b5f length     1 section .text
-start 0001352e end 00013699 length   363 section .debug
+start 00008bcf end 00008bd0 length     1 section .text
+start 0001365f end 000137ca length   363 section .debug
 start 00000e08 end 00000e83 length   123 section .info.
 start 00008000 end 00008080 length   128 section .const
 
@@ -256,17 +256,18 @@ _DisableAllPeripherals               6   (2)
 _EnableClockMirror              >   13   (5)
 
 Debug\dht11.o:
-_dht11_CerrarConexion           >   12   (4)
-_dht11_ComenzarTransmision          12   (4)
-_dht11_LeerDatos                >   16   (9)
+_dht11_CerrarConexion               12   (4)
+_dht11_ComenzarTransmision          14   (6)
+_dht11_Lectura                      21   (4)
+_dht11_LeerDatos                    17   (10)
 _dht11_ModoCambiado                  2   (2)
 
 Debug\gestormodo.o:
 _gm_Borrar                          11   (7)
 _gm_Init                            11   (7)
 _gm_NotificarCambioDummy        >    2   (2)
-_gm_NuevoModo                       41   (7) *** Recursive *** *** pointer() ***
-_gm_Registrar                       34   (7) *** Recursive *** *** pointer() ***
+_gm_NuevoModo                       51   (7) *** Recursive *** *** pointer() ***
+_gm_Registrar                       44   (7) *** Recursive *** *** pointer() ***
 
 Debug\gpio.o:
 _InputInt_Init                  >    8   (2)
@@ -279,11 +280,10 @@ _Output_0                            7   (2)
 _Output_1                            7   (2)
 
 Debug\isensor.o:
-_iSd_Init                           50   (9) *** Recursive *** *** pointer() ***
+_iSd_Init                           60   (9) *** Recursive *** *** pointer() ***
 
 Debug\main.o:
-_main                           >   54   (4) *** Recursive *** *** pointer() ***
-_tarea_Sensor1                      14   (2)
+_main                           >   64   (4) *** Recursive *** *** pointer() ***
 
 Debug\stm8_interrupt_vector.o:
 f_NonHandledInterrupt           >    6   (6)
@@ -325,7 +325,7 @@ _GPIO_WriteHigh                      5   (5)
 _GPIO_WriteLow                       5   (5)
 _GPIO_WriteReverse              >    5   (5)
 
-Stack size: 60
+Stack size: 70
 
 
                               ---------
@@ -378,145 +378,145 @@ Stack size: 60
        
   26 > __stext: (0)
 
-  27 > _dht11_CerrarConexion: (4)
-  28      + _Output2mhz_Init: (2)
-  29      |    + _GPIO_Init --> 16
-          | 
-  30      + _Output_1: (2)
-  31      |    + _GPIO_WriteHigh: (5)
-          | 
-       
-  32 > _dht11_LeerDatos: (9)
-  33      + _IsActive: (2)
-  34      |    + _GPIO_ReadInputPin: (5)
-          | 
-       
-  35 > _gm_NotificarCambioDummy: (2)
+  27 > _gm_NotificarCambioDummy: (2)
 
-  36 > _main: (4)
-  37      + _Clock_HSI_Init: (4)
-  38      |    + _CLK_ClockSwitchCmd: (2)
-  39      |    + _CLK_ClockSwitchConfig: (10)
-  40      |    + _CLK_DeInit: (2)
-  41      |    + _CLK_GetFlagStatus: (7)
-  42      |    + _CLK_HSECmd: (2)
-  43      |    + _CLK_HSICmd: (2)
-  44      |    + _CLK_HSIPrescalerConfig: (3)
-  45      |    + _CLK_LSICmd: (2)
-  46      |    + _CLK_SYSCLKConfig: (3)
-  47      |    + _DisableAllPeripherals: (2)
-  48      |    |    + _CLK_PeripheralClockConfig: (4)
+  28 > _main: (4)
+  29      + _Clock_HSI_Init: (4)
+  30      |    + _CLK_ClockSwitchCmd: (2)
+  31      |    + _CLK_ClockSwitchConfig: (10)
+  32      |    + _CLK_DeInit: (2)
+  33      |    + _CLK_GetFlagStatus: (7)
+  34      |    + _CLK_HSECmd: (2)
+  35      |    + _CLK_HSICmd: (2)
+  36      |    + _CLK_HSIPrescalerConfig: (3)
+  37      |    + _CLK_LSICmd: (2)
+  38      |    + _CLK_SYSCLKConfig: (3)
+  39      |    + _DisableAllPeripherals: (2)
+  40      |    |    + _CLK_PeripheralClockConfig: (4)
           |    | 
           | 
-  49      + _GPIO_DeInit: (2)
-  50      + _Output2mhz_Init --> 28
-  51      + _Output_1 --> 30
-  52      + (_dht11_ModoCambiado) ...
-  53      + (_gm_Borrar) ...
-  54      + (_gm_Init) ...
-  55      + (_gm_NuevoModo) ...
-  56      + (_gm_Registrar) ...
-  57      + (_iSd_Init) ...
-  58      + _tarea_Sensor1: (2)
-  59      |    + _dht11_ComenzarTransmision: (4)
-  60      |    |    + _Input_FL_Init: (2)
-  61      |    |    |    + _GPIO_Init --> 16
-          |    |    | 
-  62      |    |    + _IsActive --> 33
-  63      |    |    + _Output2mhz_Init --> 28
-  64      |    |    + _Output_0: (2)
-  65      |    |    |    + _GPIO_WriteLow: (5)
-          |    |    | 
-  66      |    |    + _Output_1 --> 30
-          |    | 
+  41      + _GPIO_DeInit: (2)
+  42      + _Output2mhz_Init: (2)
+  43      |    + _GPIO_Init --> 16
+          | 
+  44      + _Output_1: (2)
+  45      |    + _GPIO_WriteHigh: (5)
+          | 
+  46      + (_dht11_Lectura) ...
+  47      + (_dht11_ModoCambiado) ...
+  48      + (_gm_Borrar) ...
+  49      + (_gm_Init) ...
+  50      + (_gm_NuevoModo) ...
+  51      + (_gm_Registrar) ...
+  52      + (_iSd_Init) ...
+       
+  53 > f_NonHandledInterrupt: (6)
+
+  54   _CLK_CCOCmd --> 13
+
+  55   _CLK_CCOConfig --> 14
+
+  56   _CLK_ClockSwitchCmd --> 30
+
+  57   _CLK_ClockSwitchConfig --> 31
+
+  58   _CLK_DeInit --> 32
+
+  59   _CLK_GetFlagStatus --> 33
+
+  60   _CLK_HSECmd --> 34
+
+  61   _CLK_HSICmd --> 35
+
+  62   _CLK_HSIPrescalerConfig --> 36
+
+  63   _CLK_LSICmd --> 37
+
+  64   _CLK_PeripheralClockConfig --> 40
+
+  65   _CLK_SYSCLKConfig --> 38
+
+  66   _Clock_HSI_Init --> 29
+
+  67   _DisableAllPeripherals --> 39
+
+  68   _GPIO_DeInit --> 41
+
+  69   _GPIO_Init --> 16
+
+  70   _GPIO_ReadInputPin: (5)
+
+  71   _GPIO_WriteHigh --> 45
+
+  72   _GPIO_WriteLow: (5)
+
+  73   _Input_FL_Init: (2)
+  74      + _GPIO_Init --> 16
+       
+  75   _IsActive: (2)
+  76      + _GPIO_ReadInputPin --> 70
+       
+  77   _Output10mhz_Init --> 15
+
+  78   _Output2mhz_Init --> 42
+
+  79   _Output_0: (2)
+  80      + _GPIO_WriteLow --> 72
+       
+  81   _Output_1 --> 44
+
+  82   _dht11_CerrarConexion: (4)
+  83      + _Output2mhz_Init --> 42
+  84      + _Output_1 --> 44
+       
+  85   _dht11_ComenzarTransmision: (6)
+  86      + _Input_FL_Init --> 73
+  87      + _IsActive --> 75
+  88      + _Output2mhz_Init --> 42
+  89      + _Output_0 --> 79
+       
+  90   _dht11_Lectura: (4)
+  91      + _dht11_CerrarConexion --> 82
+  92      + _dht11_ComenzarTransmision --> 85
+  93      + _dht11_LeerDatos: (10)
+  94      |    + _IsActive --> 75
           | 
        
-  67 > f_NonHandledInterrupt: (6)
+  95   _dht11_LeerDatos --> 93
 
-  68   _CLK_CCOCmd --> 13
+  96   _dht11_ModoCambiado: (2)
 
-  69   _CLK_CCOConfig --> 14
+  97   _gm_Borrar: (7)
 
-  70   _CLK_ClockSwitchCmd --> 38
+  98   _gm_Init: (7)
 
-  71   _CLK_ClockSwitchConfig --> 39
-
-  72   _CLK_DeInit --> 40
-
-  73   _CLK_GetFlagStatus --> 41
-
-  74   _CLK_HSECmd --> 42
-
-  75   _CLK_HSICmd --> 43
-
-  76   _CLK_HSIPrescalerConfig --> 44
-
-  77   _CLK_LSICmd --> 45
-
-  78   _CLK_PeripheralClockConfig --> 48
-
-  79   _CLK_SYSCLKConfig --> 46
-
-  80   _Clock_HSI_Init --> 37
-
-  81   _DisableAllPeripherals --> 47
-
-  82   _GPIO_DeInit --> 49
-
-  83   _GPIO_Init --> 16
-
-  84   _GPIO_ReadInputPin --> 34
-
-  85   _GPIO_WriteHigh --> 31
-
-  86   _GPIO_WriteLow --> 65
-
-  87   _Input_FL_Init --> 60
-
-  88   _IsActive --> 33
-
-  89   _Output10mhz_Init --> 15
-
-  90   _Output2mhz_Init --> 28
-
-  91   _Output_0 --> 64
-
-  92   _Output_1 --> 30
-
-  93   _dht11_ComenzarTransmision --> 59
-
-  94   _dht11_ModoCambiado: (2)
-
-  95   _gm_Borrar: (7)
-
-  96   _gm_Init: (7)
-
-  97   _gm_NuevoModo: (7)
-  98      + (_dht11_ModoCambiado) --> 94
-  99      + (_gm_Borrar) --> 95
- 100      + (_gm_Init) --> 96
- 101      + (_gm_NuevoModo) --> 97
- 102      + (_gm_Registrar) ...
- 103      + (_iSd_Init) ...
+  99   _gm_NuevoModo: (7)
+ 100      + (_dht11_Lectura) --> 90
+ 101      + (_dht11_ModoCambiado) --> 96
+ 102      + (_gm_Borrar) --> 97
+ 103      + (_gm_Init) --> 98
+ 104      + (_gm_NuevoModo) --> 99
+ 105      + (_gm_Registrar) ...
+ 106      + (_iSd_Init) ...
        
- 104   _gm_Registrar: (7)
- 105      + (_dht11_ModoCambiado) --> 94
- 106      + (_gm_Borrar) --> 95
- 107      + (_gm_Init) --> 96
- 108      + (_gm_NuevoModo) --> 97
- 109      + (_gm_Registrar) --> 104
- 110      + (_iSd_Init) ...
+ 107   _gm_Registrar: (7)
+ 108      + (_dht11_Lectura) --> 90
+ 109      + (_dht11_ModoCambiado) --> 96
+ 110      + (_gm_Borrar) --> 97
+ 111      + (_gm_Init) --> 98
+ 112      + (_gm_NuevoModo) --> 99
+ 113      + (_gm_Registrar) --> 107
+ 114      + (_iSd_Init) ...
        
- 111   _iSd_Init: (9)
- 112      + (_dht11_ModoCambiado) --> 94
- 113      + (_gm_Borrar) --> 95
- 114      + (_gm_Init) --> 96
- 115      + (_gm_NuevoModo) --> 97
- 116      + (_gm_Registrar) --> 104
- 117      + (_iSd_Init) --> 111
+ 115   _iSd_Init: (9)
+ 116      + (_dht11_Lectura) --> 90
+ 117      + (_dht11_ModoCambiado) --> 96
+ 118      + (_gm_Borrar) --> 97
+ 119      + (_gm_Init) --> 98
+ 120      + (_gm_NuevoModo) --> 99
+ 121      + (_gm_Registrar) --> 107
+ 122      + (_iSd_Init) --> 115
        
- 118   _tarea_Sensor1 --> 58
-
 
 
                                -------
@@ -556,51 +556,51 @@ _BEEP_DeInit                     ********   *** removed from Debug\stm8s_beep.o 
 _BEEP_Init                       ********   *** removed from Debug\stm8s_beep.o ***
 _BEEP_LSICalibrationConfig       ********   *** removed from Debug\stm8s_beep.o ***
 _CLKPrescTable                   00008084   defined in Debug\stm8s_clk.o section .const
-_CLK_AdjustHSICalibrationValue   00008878   defined in Debug\stm8s_clk.o section .text
-_CLK_CCOCmd                      0000860e   defined in Debug\stm8s_clk.o section .text
+_CLK_AdjustHSICalibrationValue   000088e9   defined in Debug\stm8s_clk.o section .text
+_CLK_CCOCmd                      0000867f   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_CCOConfig                   00008771   defined in Debug\stm8s_clk.o section .text
+_CLK_CCOConfig                   000087e2   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_ClearITPendingBit           00008913   defined in Debug\stm8s_clk.o section .text
-_CLK_ClockSecuritySystemEnable   000087fb   defined in Debug\stm8s_clk.o section .text
-_CLK_ClockSwitchCmd              0000861c   defined in Debug\stm8s_clk.o section .text
+_CLK_ClearITPendingBit           00008984   defined in Debug\stm8s_clk.o section .text
+_CLK_ClockSecuritySystemEnable   0000886c   defined in Debug\stm8s_clk.o section .text
+_CLK_ClockSwitchCmd              0000868d   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_ClockSwitchConfig           000086a4   defined in Debug\stm8s_clk.o section .text
+_CLK_ClockSwitchConfig           00008715   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_DeInit                      0000859e   defined in Debug\stm8s_clk.o section .text
+_CLK_DeInit                      0000860f   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_FastHaltWakeUpCmd           000085d6   defined in Debug\stm8s_clk.o section .text
-_CLK_GetClockFreq                00008804   defined in Debug\stm8s_clk.o section .text
+_CLK_FastHaltWakeUpCmd           00008647   defined in Debug\stm8s_clk.o section .text
+_CLK_GetClockFreq                00008875   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\stm8s_uart1.o
-_CLK_GetFlagStatus               0000888a   defined in Debug\stm8s_clk.o section .text
+_CLK_GetFlagStatus               000088fb   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_GetITStatus                 000088e7   defined in Debug\stm8s_clk.o section .text
-_CLK_GetSYSCLKSource             00008800   defined in Debug\stm8s_clk.o section .text
-_CLK_HSECmd                      000085e4   defined in Debug\stm8s_clk.o section .text
+_CLK_GetITStatus                 00008958   defined in Debug\stm8s_clk.o section .text
+_CLK_GetSYSCLKSource             00008871   defined in Debug\stm8s_clk.o section .text
+_CLK_HSECmd                      00008655   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_HSICmd                      000085f2   defined in Debug\stm8s_clk.o section .text
+_CLK_HSICmd                      00008663   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_HSIPrescalerConfig          0000875e   defined in Debug\stm8s_clk.o section .text
+_CLK_HSIPrescalerConfig          000087cf   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_ITConfig                    00008788   defined in Debug\stm8s_clk.o section .text
-_CLK_LSICmd                      00008600   defined in Debug\stm8s_clk.o section .text
+_CLK_ITConfig                    000087f9   defined in Debug\stm8s_clk.o section .text
+_CLK_LSICmd                      00008671   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_PeripheralClockConfig       00008638   defined in Debug\stm8s_clk.o section .text
+_CLK_PeripheralClockConfig       000086a9   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_SWIMConfig                  000087ed   defined in Debug\stm8s_clk.o section .text
-_CLK_SYSCLKConfig                000087c0   defined in Debug\stm8s_clk.o section .text
+_CLK_SWIMConfig                  0000885e   defined in Debug\stm8s_clk.o section .text
+_CLK_SYSCLKConfig                00008831   defined in Debug\stm8s_clk.o section .text
                                             used in Debug\clock.o
-_CLK_SYSCLKEmergencyClear        00008885   defined in Debug\stm8s_clk.o section .text
-_CLK_SlowActiveHaltWakeUpCmd     0000862a   defined in Debug\stm8s_clk.o section .text
-_Clock_HSI_Init                  000081aa   defined in Debug\clock.o section .text
+_CLK_SYSCLKEmergencyClear        000088f6   defined in Debug\stm8s_clk.o section .text
+_CLK_SlowActiveHaltWakeUpCmd     0000869b   defined in Debug\stm8s_clk.o section .text
+_Clock_HSI_Init                  000081a5   defined in Debug\clock.o section .text
                                             used in Debug\main.o
-_DisableAllPeripherals           000081e2   defined in Debug\clock.o section .text
+_DisableAllPeripherals           000081dd   defined in Debug\clock.o section .text
 _EXTI_DeInit                     ********   *** removed from Debug\stm8s_exti.o ***
 _EXTI_GetExtIntSensitivity       ********   *** removed from Debug\stm8s_exti.o ***
 _EXTI_GetTLISensitivity          ********   *** removed from Debug\stm8s_exti.o ***
 _EXTI_SetExtIntSensitivity       ********   *** removed from Debug\stm8s_exti.o ***
 _EXTI_SetTLISensitivity          ********   *** removed from Debug\stm8s_exti.o ***
-_EnableClockMirror               00008211   defined in Debug\clock.o section .text
+_EnableClockMirror               0000820c   defined in Debug\clock.o section .text
 _FLASH_DeInit                    ********   *** removed from Debug\stm8s_flash.o ***
 _FLASH_EraseBlock                ********   *** removed from Debug\stm8s_flash.o ***
 _FLASH_EraseByte                 ********   *** removed from Debug\stm8s_flash.o ***
@@ -621,21 +621,21 @@ _FLASH_SetLowPowerMode           ********   *** removed from Debug\stm8s_flash.o
 _FLASH_SetProgrammingTime        ********   *** removed from Debug\stm8s_flash.o ***
 _FLASH_Unlock                    ********   *** removed from Debug\stm8s_flash.o ***
 _FLASH_WaitForLastOperation      ********   *** removed from Debug\stm8s_flash.o ***
-_GPIO_DeInit                     00008922   defined in Debug\stm8s_gpio.o section .text
+_GPIO_DeInit                     00008993   defined in Debug\stm8s_gpio.o section .text
                                             used in Debug\main.o
-_GPIO_ExternalPullUpConfig       000089bc   defined in Debug\stm8s_gpio.o section .text
-_GPIO_Init                       0000892a   defined in Debug\stm8s_gpio.o section .text
+_GPIO_ExternalPullUpConfig       00008a2d   defined in Debug\stm8s_gpio.o section .text
+_GPIO_Init                       0000899b   defined in Debug\stm8s_gpio.o section .text
                                             used in Debug\gpio.o
-_GPIO_ReadInputData              000089b2   defined in Debug\stm8s_gpio.o section .text
-_GPIO_ReadInputPin               000089b5   defined in Debug\stm8s_gpio.o section .text
+_GPIO_ReadInputData              00008a23   defined in Debug\stm8s_gpio.o section .text
+_GPIO_ReadInputPin               00008a26   defined in Debug\stm8s_gpio.o section .text
                                             used in Debug\gpio.o
-_GPIO_ReadOutputData             000089b0   defined in Debug\stm8s_gpio.o section .text
-_GPIO_Write                      00008992   defined in Debug\stm8s_gpio.o section .text
-_GPIO_WriteHigh                  0000899a   defined in Debug\stm8s_gpio.o section .text
+_GPIO_ReadOutputData             00008a21   defined in Debug\stm8s_gpio.o section .text
+_GPIO_Write                      00008a03   defined in Debug\stm8s_gpio.o section .text
+_GPIO_WriteHigh                  00008a0b   defined in Debug\stm8s_gpio.o section .text
                                             used in Debug\gpio.o
-_GPIO_WriteLow                   000089a1   defined in Debug\stm8s_gpio.o section .text
+_GPIO_WriteLow                   00008a12   defined in Debug\stm8s_gpio.o section .text
                                             used in Debug\gpio.o
-_GPIO_WriteReverse               000089a9   defined in Debug\stm8s_gpio.o section .text
+_GPIO_WriteReverse               00008a1a   defined in Debug\stm8s_gpio.o section .text
 _HSIDivFactor                    00008080   defined in Debug\stm8s_clk.o section .const
 _I2C_AcknowledgeConfig           ********   *** removed from Debug\stm8s_i2c.o ***
 _I2C_CheckEvent                  ********   *** removed from Debug\stm8s_i2c.o ***
@@ -667,20 +667,20 @@ _IWDG_ReloadCounter              ********   *** removed from Debug\stm8s_iwdg.o 
 _IWDG_SetPrescaler               ********   *** removed from Debug\stm8s_iwdg.o ***
 _IWDG_SetReload                  ********   *** removed from Debug\stm8s_iwdg.o ***
 _IWDG_WriteAccessCmd             ********   *** removed from Debug\stm8s_iwdg.o ***
-_InputInt_Init                   00008535   defined in Debug\gpio.o section .text
-_Input_FL_Init                   0000852a   defined in Debug\gpio.o section .text
+_InputInt_Init                   000085a6   defined in Debug\gpio.o section .text
+_Input_FL_Init                   0000859b   defined in Debug\gpio.o section .text
                                             used in Debug\dht11.o
-_Input_Init                      0000851f   defined in Debug\gpio.o section .text
-_IsActive                        00008568   defined in Debug\gpio.o section .text
+_Input_Init                      00008590   defined in Debug\gpio.o section .text
+_IsActive                        000085d9   defined in Debug\gpio.o section .text
                                             used in Debug\dht11.o
-_Modo                            00000020   defined in Debug\main.o section .ubsct
-_Output10mhz_Init                0000854b   defined in Debug\gpio.o section .text
+_Modo                            00000024   defined in Debug\main.o section .ubsct
+_Output10mhz_Init                000085bc   defined in Debug\gpio.o section .text
                                             used in Debug\clock.o
-_Output2mhz_Init                 00008540   defined in Debug\gpio.o section .text
+_Output2mhz_Init                 000085b1   defined in Debug\gpio.o section .text
                                             used in Debug\main.o Debug\dht11.o
-_Output_0                        00008556   defined in Debug\gpio.o section .text
+_Output_0                        000085c7   defined in Debug\gpio.o section .text
                                             used in Debug\dht11.o
-_Output_1                        0000855f   defined in Debug\gpio.o section .text
+_Output_1                        000085d0   defined in Debug\gpio.o section .text
                                             used in Debug\main.o Debug\dht11.o
 _RST_ClearFlag                   ********   *** removed from Debug\stm8s_rst.o ***
 _RST_GetFlagStatus               ********   *** removed from Debug\stm8s_rst.o ***
@@ -869,7 +869,7 @@ _WWDG_SetCounter                 ********   *** removed from Debug\stm8s_wwdg.o 
 _WWDG_SetWindowValue             ********   *** removed from Debug\stm8s_wwdg.o ***
 __endmem                         000001ff   defined in command file
                                             *** not used ***
-__endzp                          00000042   defined in command file section .ubsct
+__endzp                          00000046   defined in command file section .ubsct
                                             used in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8
 __idesc__                        0000808c   defined in linker section .init
                                             used in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8
@@ -882,51 +882,51 @@ __startmem                       00000100   defined in command file section .bss
 __stext                          00008098   defined in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8 section .text
                                             used in Debug\stm8_interrupt_vector.o
 __vectab                         00008000   defined in Debug\stm8_interrupt_vector.o section .const
-_dht11_CerrarConexion            00008420   defined in Debug\dht11.o section .text
-_dht11_ComenzarTransmision       00008224   defined in Debug\dht11.o section .text
+_dht11_CerrarConexion            00008489   defined in Debug\dht11.o section .text
+_dht11_ComenzarTransmision       0000824a   defined in Debug\dht11.o section .text
+_dht11_Lectura                   0000821f   defined in Debug\dht11.o section .text
                                             used in Debug\main.o
-_dht11_LeerDatos                 00008289   defined in Debug\dht11.o section .text
-_dht11_ModoCambiado              00008223   defined in Debug\dht11.o section .text
+_dht11_LeerDatos                 000082b7   defined in Debug\dht11.o section .text
+_dht11_ModoCambiado              0000821e   defined in Debug\dht11.o section .text
                                             used in Debug\main.o
 _exit                            000080e6   defined in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8 section .text
-_gm_Borrar                       000084b6   defined in Debug\gestormodo.o section .text
+_gm_Borrar                       00008527   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
 _gm_CALIBRACION                  00000001   defined in Debug\gestormodo.o section .bsct, initialized
-_gm_Init                         00008437   defined in Debug\gestormodo.o section .text
+_gm_Init                         000084a8   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
 _gm_MEDICION                     00000000   defined in Debug\gestormodo.o section .bsct, initialized
                                             used in Debug\main.o
-_gm_NotificarCambioDummy         0000851e   defined in Debug\gestormodo.o section .text
-_gm_NuevoModo                    000084df   defined in Debug\gestormodo.o section .text
+_gm_NotificarCambioDummy         0000858f   defined in Debug\gestormodo.o section .text
+_gm_NuevoModo                    00008550   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
 _gm_RESET                        00000003   defined in Debug\gestormodo.o section .bsct, initialized
-_gm_Registrar                    0000846b   defined in Debug\gestormodo.o section .text
+_gm_Registrar                    000084dc   defined in Debug\gestormodo.o section .text
                                             used in Debug\main.o
 _gm_TARAJE                       00000002   defined in Debug\gestormodo.o section .bsct, initialized
-_iSd_Init                        00008579   defined in Debug\isensor.o section .text
+_iSd_Init                        000085ea   defined in Debug\isensor.o section .text
                                             used in Debug\main.o
 _main                            000080e8   defined in Debug\main.o section .text
                                             used in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8
-_sensor1                         00000012   defined in Debug\main.o section .ubsct
+_sensor1                         00000014   defined in Debug\main.o section .ubsct
 _sensor2                         00000004   defined in Debug\main.o section .ubsct
-_tarea_Sensor1                   0000819c   defined in Debug\main.o section .text
 c_cmulx                          ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)cmulx.o ***
-c_divsl                          000089fa   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o section .text
+c_divsl                          00008a6b   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o section .text
                                             *** not used ***
-c_divul                          00008a11   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o section .text
+c_divul                          00008a82   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o section .text
                                             used in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ludiv.o
 c_imul                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)imul.o ***
 c_ladd                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ladd.o ***
 c_lcmp                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lcmp.o ***
 c_lgadd                          ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lgadd.o ***
-c_lgneg                          00008ae5   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lgneg.o section .text
+c_lgneg                          00008b56   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lgneg.o section .text
                                             used in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o
 c_llsh                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)llsh.o ***
 c_lmul                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lmul.o ***
 c_lmulc                          ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lmul.o ***
-c_lneg                           00008af8   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lneg.o section .text
+c_lneg                           00008b69   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lneg.o section .text
                                             used in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ldiv.o
-c_lreg                           00000038   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lreg.o section .ubsct
+c_lreg                           0000003c   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lreg.o section .ubsct
                                             used in Debug\stm8s_awu.o
                                                     Debug\stm8s_beep.o
                                                     Debug\stm8s_clk.o
@@ -947,20 +947,20 @@ c_lreg                           00000038   defined in (D:\Programas\CosmicC\CXS
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)smul.o
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)umul.o
 c_lsub                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)lsub.o ***
-c_ltor                           000089d4   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ltor.o section .text
+c_ltor                           00008a45   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ltor.o section .text
                                             used in Debug\stm8s_awu.o
                                                     Debug\stm8s_beep.o
                                                     Debug\stm8s_clk.o
                                                     Debug\stm8s_flash.o
                                                     Debug\stm8s_i2c.o
                                                     Debug\stm8s_uart1.o
-c_ludv                           000089e6   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ludiv.o section .text
+c_ludv                           00008a57   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)ludiv.o section .text
                                             used in Debug\stm8s_awu.o
                                                     Debug\stm8s_beep.o
                                                     Debug\stm8s_clk.o
                                                     Debug\stm8s_i2c.o
                                                     Debug\stm8s_uart1.o
-c_rtol                           00008b0d   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)rtol.o section .text
+c_rtol                           00008b7e   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)rtol.o section .text
                                             used in Debug\stm8s_clk.o
                                                     Debug\stm8s_flash.o
                                                     Debug\stm8s_i2c.o
@@ -969,7 +969,7 @@ c_sdivx                          ********   *** removed from (D:\Programas\Cosmi
 c_smodx                          ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)sdivx.o ***
 c_smul                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)smul.o ***
 c_umul                           ********   *** removed from (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)umul.o ***
-c_x                              0000003c   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xreg.o section .ubsct
+c_x                              00000040   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xreg.o section .ubsct
                                             used in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8
                                                     Debug\stm8s_awu.o
                                                     Debug\stm8s_beep.o
@@ -979,9 +979,9 @@ c_x                              0000003c   defined in (D:\Programas\CosmicC\CXS
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)sdivx.o
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)umul.o
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xymov.o
-c_xymov                          00008b1f   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xymov.o section .text
+c_xymov                          00008b90   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)xymov.o section .text
                                             used in Debug\gestormodo.o
-c_y                              0000003f   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)yreg.o section .ubsct
+c_y                              00000043   defined in (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)yreg.o section .ubsct
                                             used in D:\Programas\CosmicC\CXSTM8\lib\crtsi0.sm8
                                                     (D:\Programas\CosmicC\CXSTM8\lib\libm0.sm8)umul.o
-f_NonHandledInterrupt            00008b5e   defined in Debug\stm8_interrupt_vector.o section .text
+f_NonHandledInterrupt            00008bcf   defined in Debug\stm8_interrupt_vector.o section .text

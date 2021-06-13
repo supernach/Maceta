@@ -711,7 +711,7 @@ CR5	inc\stm8s.h	2074;"	member	struct:UART4_struct
 CR6	inc\stm8s.h	1876;"	member	struct:UART2_struct
 CR6	inc\stm8s.h	1983;"	member	struct:UART3_struct
 CR6	inc\stm8s.h	2075;"	member	struct:UART4_struct
-CRC	inc\dht11.h	22;"	member	struct:sDht11_SI
+CRC	inc\dht11.h	24;"	member	struct:sDht11_SI
 CRCPR	inc\stm8s.h	1703;"	member	struct:SPI_struct
 CSR	inc\stm8s.h	321;"	member	struct:ADC1_struct
 CSR	inc\stm8s.h	392;"	member	struct:ADC2_struct
@@ -746,11 +746,11 @@ DB9RH	inc\stm8s.h	318;"	member	struct:ADC1_struct
 DB9RL	inc\stm8s.h	319;"	member	struct:ADC1_struct
 DDR	inc\stm8s.h	269;"	member	struct:GPIO_struct
 DGR	inc\stm8s.h	2182;"	member	struct:__anon6
-DHT11_Datos_t	inc\dht11.h	33;"	typedef	typeref:struct:sDht11Datos
-DHT11_Estado_e	inc\dht11.h	18;"	typedef	typeref:enum:__anon1
+DHT11_Datos_t	inc\dht11.h	35;"	typedef	typeref:struct:sDht11Datos
+DHT11_Estado_e	inc\dht11.h	20;"	typedef	typeref:enum:__anon1
 DHT11_H	inc\dht11.h	2;"	macro
-DHT11_SI_t	inc\dht11.h	27;"	typedef	typeref:struct:sDht11_SI
-DHT11_t	inc\dht11.h	42;"	typedef	typeref:struct:sDht11
+DHT11_SI_t	inc\dht11.h	29;"	typedef	typeref:struct:sDht11_SI
+DHT11_t	inc\dht11.h	44;"	typedef	typeref:struct:sDht11
 DISABLE	inc\stm8s.h	235;"	enumerator	enum:__anon4
 DM	inc\stm8s.h	2704;"	macro
 DM_BaseAddress	inc\stm8s.h	2591;"	macro
@@ -766,7 +766,7 @@ DRL	inc\stm8s.h	326;"	member	struct:ADC1_struct
 DRL	inc\stm8s.h	397;"	member	struct:ADC2_struct
 DTR	inc\stm8s.h	644;"	member	struct:TIM1_struct
 DUKR	inc\stm8s.h	1526;"	member	struct:FLASH_struct
-Datos	inc\dht11.h	41;"	member	struct:sDht11
+Datos	inc\dht11.h	43;"	member	struct:sDht11
 Datos	inc\gestormododef.h	81;"	member	struct:sGestorModo
 Datos	inc\isensor.h	25;"	member	struct:sISensor
 DeInitAllGPIO	main.c	22;"	function	file:	signature:(void)
@@ -1110,8 +1110,8 @@ HSITRIMR	inc\stm8s.h	522;"	member	struct:CLK_struct
 HSI_VALUE	inc\stm8s.h	118;"	macro
 HTRH	inc\stm8s.h	329;"	member	struct:ADC1_struct
 HTRL	inc\stm8s.h	330;"	member	struct:ADC1_struct
-H_Decimal	inc\dht11.h	25;"	member	struct:sDht11_SI
-H_Entero	inc\dht11.h	26;"	member	struct:sDht11_SI
+H_Decimal	inc\dht11.h	27;"	member	struct:sDht11_SI
+H_Entero	inc\dht11.h	28;"	member	struct:sDht11_SI
 I2C	inc\stm8s.h	2656;"	macro
 I2C_ACK_CURR	inc\stm8s_i2c.h	56;"	enumerator	enum:__anon48
 I2C_ACK_NEXT	inc\stm8s_i2c.h	57;"	enumerator	enum:__anon48
@@ -2835,8 +2835,8 @@ TRUE	inc\stm8s.h	231;"	enumerator	enum:__anon2
 TSR	inc\stm8s.h	2178;"	member	struct:__anon6
 TXCRCR	inc\stm8s.h	1705;"	member	struct:SPI_struct
 T_COUNT	inc\utils.h	27;"	macro
-T_Decimal	inc\dht11.h	23;"	member	struct:sDht11_SI
-T_Entero	inc\dht11.h	24;"	member	struct:sDht11_SI
+T_Decimal	inc\dht11.h	25;"	member	struct:sDht11_SI
+T_Entero	inc\dht11.h	26;"	member	struct:sDht11_SI
 Taraje	inc\gestormododef.h	32;"	member	struct:sModo
 TxMailbox	inc\stm8s.h	2205;"	member	union:__anon6::__anon7	typeref:struct:__anon6::__anon7::__anon8
 U16_MAX	inc\stm8s.h	243;"	macro
@@ -3184,7 +3184,7 @@ UART4_struct	inc\stm8s.h	2064;"	struct
 UNUSED	inc\stm8s.h	2805;"	macro
 USE_STDPERIPH_DRIVER	inc\stm8s.h	96;"	macro
 UTILS_H	inc\utils.h	2;"	macro
-UltimaLectura	inc\dht11.h	31;"	member	struct:sDht11Datos
+UltimaLectura	inc\dht11.h	33;"	member	struct:sDht11Datos
 VECTOR_ID	inc\stm8s.h	2759;"	macro
 ValBit	inc\stm8s.h	2798;"	macro
 WR	inc\stm8s.h	1636;"	member	struct:WWDG_struct
@@ -3256,15 +3256,17 @@ bool	inc\stm8s.h	231;"	typedef	typeref:enum:__anon2
 dht11_CERRANDO_CONEXION	inc\dht11.h	16;"	enumerator	enum:__anon1
 dht11_COMUNICANDO	inc\dht11.h	12;"	enumerator	enum:__anon1
 dht11_CONEXION_OK	inc\dht11.h	13;"	enumerator	enum:__anon1
-dht11_CerrarConexion	inc\dht11.h	51;"	prototype	signature:( DHT11_t* sensor )
-dht11_CerrarConexion	src\dht11.c	118;"	function	signature:( DHT11_t* sensor )
-dht11_ComenzarTransmision	inc\dht11.h	49;"	prototype	signature:(DHT11_t* sensor)
+dht11_CerrarConexion	inc\dht11.h	53;"	prototype	signature:( DHT11_t* sensor )
+dht11_CerrarConexion	src\dht11.c	94;"	function	signature:( DHT11_t* sensor )
+dht11_ComenzarTransmision	inc\dht11.h	51;"	prototype	signature:(DHT11_t* sensor)
 dht11_ComenzarTransmision	src\dht11.c	42;"	function	signature:( DHT11_t* sensor )
-dht11_LeerDatos	inc\dht11.h	50;"	prototype	signature:( DHT11_t* sensor )
-dht11_LeerDatos	src\dht11.c	97;"	function	signature:( DHT11_t* sensor )
+dht11_ESPERA_ALTO	inc\dht11.h	19;"	enumerator	enum:__anon1
+dht11_ESPERA_BAJO	inc\dht11.h	18;"	enumerator	enum:__anon1
+dht11_LeerDatos	inc\dht11.h	52;"	prototype	signature:( DHT11_t* sensor )
+dht11_LeerDatos	src\dht11.c	73;"	function	signature:( DHT11_t* sensor )
 dht11_MIDIENDO_H	inc\dht11.h	14;"	enumerator	enum:__anon1
 dht11_MIDIENDO_T	inc\dht11.h	15;"	enumerator	enum:__anon1
-dht11_ModoCambiado	inc\dht11.h	47;"	prototype	signature:( void )
+dht11_ModoCambiado	inc\dht11.h	49;"	prototype	signature:( void )
 dht11_ModoCambiado	src\dht11.c	37;"	function	signature:( void )
 dht11_SIN_REGISTRAR	inc\dht11.h	11;"	enumerator	enum:__anon1
 dht11_SLEEP	inc\dht11.h	17;"	enumerator	enum:__anon1
@@ -3274,7 +3276,7 @@ disableInterrupts	inc\stm8s.h	2736;"	macro
 enableInterrupts	inc\stm8s.h	2716;"	macro
 enableInterrupts	inc\stm8s.h	2725;"	macro
 enableInterrupts	inc\stm8s.h	2735;"	macro
-estado	inc\dht11.h	32;"	member	struct:sDht11Datos
+estado	inc\dht11.h	34;"	member	struct:sDht11Datos
 false	..\..\..\..\..\..\programas\cosmicc\cxstm8\hstm8\stdbool.h	10;"	macro
 gm_Borrar	inc\gestormodo.h	37;"	prototype	signature:( uint8_t idSensor, GestorModoDatos_t* gestorModoDatos )
 gm_Borrar	src\gestormodo.c	50;"	function	signature:( uint8_t idSensor, GestorModoDatos_t* gestorModoDatos )
@@ -3314,16 +3316,16 @@ main	main.c	133;"	function
 nop	inc\stm8s.h	2720;"	macro
 nop	inc\stm8s.h	2729;"	macro
 nop	inc\stm8s.h	2739;"	macro
-pin	inc\dht11.h	40;"	member	struct:sDht11
+pin	inc\dht11.h	42;"	member	struct:sDht11
 rim	inc\stm8s.h	2718;"	macro
 rim	inc\stm8s.h	2727;"	macro
 rim	inc\stm8s.h	2737;"	macro
 s16	inc\stm8s.h	223;"	typedef
 s32	inc\stm8s.h	222;"	typedef
 s8	inc\stm8s.h	224;"	typedef
-sDht11	inc\dht11.h	37;"	struct
-sDht11Datos	inc\dht11.h	29;"	struct
-sDht11_SI	inc\dht11.h	20;"	struct
+sDht11	inc\dht11.h	39;"	struct
+sDht11Datos	inc\dht11.h	31;"	struct
+sDht11_SI	inc\dht11.h	22;"	struct
 sGestorModo	inc\gestormododef.h	79;"	struct
 sGestorModoDatos	inc\gestormododef.h	65;"	struct
 sISensor	inc\isensor.h	23;"	struct
@@ -3336,7 +3338,7 @@ sensor2	inc\maceta_def.h	10;"	variable
 sim	inc\stm8s.h	2719;"	macro
 sim	inc\stm8s.h	2728;"	macro
 sim	inc\stm8s.h	2738;"	macro
-sistema	inc\dht11.h	39;"	member	struct:sDht11
+sistema	inc\dht11.h	41;"	member	struct:sDht11
 tarea_Sensor1	main.c	13;"	prototype	file:	signature:(void)
 tarea_Sensor1	main.c	145;"	function	signature:(void)
 trap	inc\stm8s.h	2721;"	macro
