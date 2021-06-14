@@ -10,7 +10,6 @@
 #include "utils.h"
 #include "maceta_def.h"
 
-//void tarea_Sensor1(void);
 
 /**
 /*
@@ -139,24 +138,6 @@ int main()
 	while (1)
 	{
 		sensor1.Lectura( &sensor1 );
-		_delay_ms(3000);
+		_delay_ms(1000);
 	}
 }
-
-/*void tarea_Sensor1(void)
-{
-	if( sensor1.sistema.Datos.Modo->Medicion )
-	{
-		dht11_ComenzarTransmision( &sensor1 );
-	
-		if( sensor1.Datos.estado == dht11_CONEXION_OK )
-		{
-			dht11_LeerDatos( &sensor1 );
-		}
-		else
-		{
-			//mal plan
-		}
-		dht11_CerrarConexion( &sensor1 );
-	}
-}*/

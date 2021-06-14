@@ -98,7 +98,7 @@
 1068                     ; 141 		sensor1.Lectura( &sensor1 );
 1070  0097 ae0010        	ldw	x,#_sensor1
 1071  009a 92cd1e        	call	[_sensor1+14.w]
-1076  009d ae0bb8        	ldw	x,#3000
+1076  009d ae03e8        	ldw	x,#1000
 1077  00a0 1f01          	ldw	(OFST-1,sp),x
 1080  00a2 2008          	jra	L746
 1081  00a4               L346:

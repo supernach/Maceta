@@ -8,69 +8,47 @@ static @inline uint8_t leerByte( Pin* gpio )
 	
 	for( contador; contador < 8; contador++ )
 	{
-		while( !IsActive( gpio ) )
+		while( !IsActive( gpio ) ) //Espera nuevo bit
 		{
 		
 		}
-		_delay_us( 40 );
+		_delay_us( 40 ); //Espero para comprobar nivel de la gpio +30us = 1 ; -30us = 0
 	
 		bitLeido = 0;
 		if( IsActive( gpio ) )
 		{
 			bitLeido = 1;
-			temp |= bitLeido;
-			temp <<=  1;
-			while( IsActive( gpio ) )
-			{
-			
-			}
 		}
 		else
 		{
-			temp <<= 1;
+			bitLeido = 0;
+		}
+		
+		temp |= bitLeido;
+		if( contador < 7 )
+		{
+			temp <<=  1;
+		}
+		
+		while( IsActive( gpio ) ) //Si el bit=1 espero a que baje señal
+		{
+			
 		}
 	}
 	
 	return temp;
 }
 
-void dht11_ModoCambiado( void )
+static @inline bool dht11_ComenzarTransmision( DHT11_t* sensor )
 {
-	
-}
-
-void dht11_Lectura( DHT11_t* sensor )
-{
-	if( dht11_ComenzarTransmision( sensor ) )
-	{
-		if( dht11_LeerDatos( sensor ) )
-		{
-			sensor->Datos.estado = dht11_CERRANDO_CONEXION;
-		}
-		else
-		{
-			sensor->Datos.estado = dht11_FALLO_AL_LEER;//fallo crc
-		}
-	}
-	else
-	{
-		sensor->Datos.estado = dht11_FALLO_AL_COMUNICAR;
-	}
-	
-	dht11_CerrarConexion( sensor );
-	
-}
-
-bool dht11_ComenzarTransmision( DHT11_t* sensor )
-{
-	//_delay_ms(100);
 	Output2mhz_Init( &sensor->pin );
 	Output_0( &sensor->pin );
 	
 	sensor->Datos.estado = dht11_COMUNICANDO;
 	_delay_ms( 18 ); //Espero tiempo puesta en marcha dht11
 	
-	Input_FL_Init( &sensor->pin ); //Configuro como entrada para leer
+	Input_Init( &sensor->pin ); //Configuro como entrada para leer
+	_delay_us( 40 );
 	
 	while( !IsActive( &sensor->pin ) )
 	{
@@ -88,7 +66,7 @@ bool dht11_ComenzarTransmision( DHT11_t* sensor )
 	return true;
 }
 
-bool dht11_LeerDatos( DHT11_t* sensor )
+static @inline bool dht11_LeerDatos( DHT11_t* sensor )
 {
 	uint16_t checkCRC = 0;
 	uint8_t mask = 0b11111111;
@@ -120,7 +98,7 @@ bool dht11_LeerDatos( DHT11_t* sensor )
 	}
 }
 
-void dht11_CerrarConexion( DHT11_t* sensor )
+static @inline void dht11_CerrarConexion( DHT11_t* sensor )
 {
 	Output2mhz_Init( &sensor->pin );
 	Output_1( &sensor->pin );
@@ -130,4 +108,37 @@ void dht11_CerrarConexion( DHT11_t* sensor )
 		sensor->Datos.estado = dht11_SLEEP;
 	}	
 }
+
+void dht11_ModoCambiado( void )
+{
+	
+}
+
+void dht11_Lectura( DHT11_t* sensor )
+{
+	if( dht11_ComenzarTransmision( sensor ) )
+	{
+		if( dht11_LeerDatos( sensor ) )
+		{
+			sensor->Datos.estado = dht11_CERRANDO_CONEXION;
+		}
+		else
+		{
+			sensor->Datos.estado = dht11_FALLO_AL_LEER;//fallo crc
+		}
+	}
+	else
+	{
+		sensor->Datos.estado = dht11_FALLO_AL_COMUNICAR;
+	}
+	
+	dht11_CerrarConexion( sensor );
+	
+}
+
+
+
+
+
+
 

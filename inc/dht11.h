@@ -40,25 +40,20 @@ typedef struct sDht11Datos
 
 
 
-/*typedef*/ struct DHT11_t
+struct DHT11_t
 {
 	iSensor_t sistema;
 	Pin pin;
 	DHT11_Datos_t Datos;
 	
 	void ( *Lectura )( DHT11_t* sensor );
-}; //DHT11_t;
+};
 
 
 
 
 void dht11_ModoCambiado( void );
 void dht11_Lectura( DHT11_t* sensor );
-
-bool dht11_ComenzarTransmision( DHT11_t* sensor );
-bool dht11_LeerDatos( DHT11_t* sensor );
-void dht11_CerrarConexion( DHT11_t* sensor );
-
 
 
 #endif
