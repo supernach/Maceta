@@ -3,22 +3,18 @@
 
 void Maceta_Init( INodoInvoker_t* nodo )
 {
-	nodo->SetCommand = &Maceta_SetCommand;
-	nodo->SetReceiver = &Maceta_SetReceiver;
-	nodo->Execute = &Maceta_Execute;
+	nodo->ConfigCommand = &Maceta_ConfigCommand;
+	nodo->ExecuteCommand = &Maceta_ExecuteCommand;
 }
 
-void Maceta_SetCommand( INodoInvoker_t* nodo, ISensorCmd_t* command )
+void Maceta_ConfigCommand( INodoInvoker_t* nodo, ISensorCmd_t* command, ISensorReceiver_t* cmdRcv, ISensorGeneral_t* receiver )
 {
 	nodo->command = command;
-}
-
-void Maceta_SetReceiver( INodoInvoker_t* nodo, ISensorGeneral_t* receiver )
-{
+	nodo->command->Receiver = cmdRcv;
 	nodo->receiver = receiver;
 }
 
-void Maceta_Execute( INodoInvoker_t* nodo )
+void Maceta_ExecuteCommand( INodoInvoker_t* nodo )
 {
 	nodo->command->Execute(nodo->command, nodo->receiver);
 }

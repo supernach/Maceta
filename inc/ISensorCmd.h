@@ -17,7 +17,6 @@ struct ISensorCmd
 {
     ISensorReceiver_t* Receiver;
 
-		void( *SetReceiver)( ISensorCmd_t* cmd, ISensorReceiver_t* rcv );
     void( *Execute )( ISensorCmd_t* cmd, ISensorGeneral_t* sensor );
 };
 

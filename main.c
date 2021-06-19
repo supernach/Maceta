@@ -80,15 +80,15 @@ static @inline void ConfiguracionComandos( void )
 /**
 /* @brief Maceta es el invoker de los comandos
 */
-static @inline void ConfiguracionMaceta( void )
+static @inline void ConfiguracionInvoker( void )
+{
+	Maceta_Init( &Maceta );	
+}
+
+static @inline void InicializarGestorComandos( void )
 {
 	ConfiguracionComandos();
-	
-	Maceta_Init( &Maceta );
-	Maceta.SetCommand( &Maceta, &cmd_Leer );
-	Maceta.SetReceiver( &Maceta, &ptrHaciaSensores );
-	cmd_Leer.SetReceiver( &cmd_Leer, &sensor1.Orden );
-	Maceta.Execute( &Maceta );
+	ConfiguracionInvoker();
 }
 
 /**
@@ -138,6 +138,7 @@ static @inline void Inicializacion_Total(void)
 	
 	InicializacionGestionModos();
 	InicializacionModoSensores();
+	InicializarGestorComandos();
 }
 
 /**
@@ -154,7 +155,8 @@ int main()
 	
 	while (1)
 	{
-		//sensor1.Sensor.Lectura( &sensor1.Sensor );
+		Maceta.ConfigCommand( &Maceta, &cmd_Leer, &sensor1.Orden, &ptrHaciaSensores );
+		Maceta.ExecuteCommand( &Maceta );
 		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 		_delay_ms(1000);
 	}

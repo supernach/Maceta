@@ -27,6 +27,7 @@ GestorModo_t Modo;
 /* @brief Sensores
 */
 SensorTH_t sensor1;
+SensorTH_t sensor2;
 
 /**
 /* @brief Comandos

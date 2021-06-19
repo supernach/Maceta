@@ -9,9 +9,9 @@ struct INodoInvoker
 {
     ISensorCmd_t* command;
 		ISensorGeneral_t* receiver;
-    void( *SetCommand )( INodoInvoker_t* nodo, ISensorCmd_t* command );
-		void( *SetReceiver )( INodoInvoker_t* nodo, ISensorGeneral_t* receiver );
-    void( *Execute )( INodoInvoker_t* nodo );
+		
+    void( *ConfigCommand )( INodoInvoker_t* nodo, ISensorCmd_t* command, ISensorReceiver_t* cmdRcv, ISensorGeneral_t* receiver );
+    void( *ExecuteCommand )( INodoInvoker_t* nodo );
 };
 
 #endif
