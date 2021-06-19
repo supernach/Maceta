@@ -2,10 +2,10 @@
 
 
 
-void iSd_Init( iSensorDatos_t* sensor, void ( *notificacion )(), uint8_t id, GestorModo_t* gm)
+void iSd_Init( ISensor_t* sensor, void ( *notificacion )(), uint8_t id, GestorModo_t* gm)
 {
-	sensor->Modo = &gm->Datos.Modos[sensor->ID].Modo;
-	sensor->ID = id;
+	sensor->Datos.Modo = &gm->Datos.Modos[sensor->Datos.ID].Modo;
+	sensor->Datos.ID = id;
 	
 	gm->Registrar(id, notificacion, &gm->Datos);
 }

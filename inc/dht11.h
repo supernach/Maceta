@@ -4,9 +4,9 @@
 #include "utils.h"
 #include "pin_def.h"
 #include "gpio.h"
-#include "isensor.h"
 
-typedef struct DHT11_t DHT11_t;
+typedef struct DHT11 DHT11_t;
+typedef struct DHT11_Config DHT11_Config_t;
 
 typedef enum
 {
@@ -35,25 +35,31 @@ typedef struct sDht11_SI
 typedef struct sDht11Datos
 {
 	DHT11_SI_t UltimaLectura;
-	DHT11_Estado_e estado;
+	DHT11_Estado_e Estado;
 } DHT11_Datos_t;
 
 
-
-struct DHT11_t
+struct DHT11_Config
 {
-	iSensor_t sistema;
-	Pin pin;
+	Pin HW;
+};
+
+
+struct DHT11
+{
+	DHT11_Config_t Config;
 	DHT11_Datos_t Datos;
 	
 	void ( *Lectura )( DHT11_t* sensor );
 };
 
-
+void DHT11_Init( DHT11_t* dht11 );
 
 
 void dht11_ModoCambiado( void );
 void dht11_Lectura( DHT11_t* sensor );
+
+
 
 
 #endif

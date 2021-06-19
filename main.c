@@ -11,6 +11,7 @@
 #include "maceta_def.h"
 
 
+
 /**
 /*
 /* @brief Resetear todos los puertos perifericos
@@ -36,10 +37,10 @@ static @inline void DeInitAllGPIO(void)
 
 static @inline void Pin_Init(void)
 {
-	sensor1.pin.Pin = GPIO_PIN_3;
-	sensor1.pin.Puerto = GPIOA;
-	Output2mhz_Init( &sensor1.pin );
-	Output_1( &sensor1.pin );
+	sensor1.Sensor.Config.HW.Pin = GPIO_PIN_3;
+	sensor1.Sensor.Config.HW.Puerto = GPIOA;
+	Output2mhz_Init( &sensor1.Sensor.Config.HW );
+	Output_1( &sensor1.Sensor.Config.HW );
 }
 
 /**
@@ -67,6 +68,29 @@ static @inline void InicializacionCLK(void)
 	Clock_HSI_Init(CLK_PRESCALER_HSIDIV1, CLK_PRESCALER_CPUDIV1);
 }
 
+
+/**
+/* @brief Inicializacion d elos distintos comandos existentes
+*/
+static @inline void ConfiguracionComandos( void )
+{
+	cmdLeer_Init( &cmd_Leer );
+}
+
+/**
+/* @brief Maceta es el invoker de los comandos
+*/
+static @inline void ConfiguracionMaceta( void )
+{
+	ConfiguracionComandos();
+	
+	Maceta_Init( &Maceta );
+	Maceta.SetCommand( &Maceta, &cmd_Leer );
+	Maceta.SetReceiver( &Maceta, &ptrHaciaSensores );
+	cmd_Leer.SetReceiver( &cmd_Leer, &sensor1.Orden );
+	Maceta.Execute( &Maceta );
+}
+
 /**
 /*
 /* @brief Inicializacion gestor modos
@@ -83,12 +107,6 @@ static @inline void InicializacionGestionModos(void)
 	Modo.Init(&Modo.Datos);
 }
 
-static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, void ( *modoCambiado )(), uint8_t id)
-{
-	sensor->Init = iSd_Init;
-	sensor->Init(&sensor->Datos, modoCambiado, id, &Modo);
-}
-
 /**
 /*
 /* @brief Inicializacion modo de elementos. Aqui se registra el sensor
@@ -99,9 +117,8 @@ static @inline void aux_InicializacionModoSensores(iSensor_t* sensor, void ( *mo
 */
 static @inline void InicializacionModoSensores(void)
 {
-	aux_InicializacionModoSensores(&sensor1.sistema, &dht11_ModoCambiado, 0);
-	sensor1.Lectura = &dht11_Lectura;
-	Modo.NuevoModo(sensor1.sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
+	SensorTH_Init(&sensor1, &Modo);
+	ptrHaciaSensores.SensorTH = &sensor1.Sensor;
 }
 
 
@@ -137,7 +154,8 @@ int main()
 	
 	while (1)
 	{
-		sensor1.Lectura( &sensor1 );
+		//sensor1.Sensor.Lectura( &sensor1.Sensor );
+		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 		_delay_ms(1000);
 	}
 }
