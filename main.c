@@ -157,6 +157,7 @@ int main()
 	{
 		Maceta.ConfigCommand( &Maceta, &cmd_Leer, &sensor1.Orden, &ptrHaciaSensores );
 		Maceta.ExecuteCommand( &Maceta );
+		
 		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 		_delay_ms(1000);
 	}

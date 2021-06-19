@@ -99,7 +99,7 @@
 1116                     ; 159 		Maceta.ExecuteCommand( &Maceta );
 1118  009c ae003e        	ldw	x,#_Maceta
 1119  009f 92cd44        	call	[_Maceta+6.w]
-1121                     ; 160 		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
+1121                     ; 161 		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);
 1123  00a2 ae0024        	ldw	x,#_Modo
 1124  00a5 89            	pushw	x
 1125  00a6 ae0000        	ldw	x,#_gm_MEDICION
