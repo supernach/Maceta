@@ -1,13 +1,12 @@
 #ifndef ISENSOR_H
 #define ISENSOR_H
 
-//#include "isensorreceiver.h"
-#include "dht11.h"
+#include "sensorth.h"
 #include "gestormodo.h"
 
 typedef struct ISensor ISensor_t;
-typedef struct ISensorGeneral ISensorGeneral_t;
 typedef struct ISensorDatos ISensorDatos_t;
+typedef struct ISensorGeneral ISensorGeneral_t;
 
 /**
 /*@brief Tipo destinado a albergar los datos comunes para 
@@ -39,7 +38,7 @@ struct ISensor
 
 struct ISensorGeneral
 {
-	DHT11_t* SensorTH;
+	SensorTH_t* SensorTH;
 };
 
 /**

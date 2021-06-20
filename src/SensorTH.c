@@ -14,7 +14,7 @@ void SensorTH_Init( SensorTH_t* sensor, GestorModo_t* modo )
 
 void SensorTH_Medicion( ISensorGeneral_t* sensor )
 {
-	sensor->SensorTH->Lectura(sensor->SensorTH);
+	sensor->SensorTH->Sensor.Lectura(sensor->SensorTH->Sensor);
 }
 
 void SensorTH_Calibrar( void )

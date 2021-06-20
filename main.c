@@ -118,7 +118,7 @@ static @inline void InicializacionGestionModos(void)
 static @inline void InicializacionModoSensores(void)
 {
 	SensorTH_Init(&sensor1, &Modo);
-	ptrHaciaSensores.SensorTH = &sensor1.Sensor;
+	ptrHaciaSensores.SensorTH = &sensor1;
 }
 
 
