@@ -1,4 +1,4 @@
-#include "gestormodo.h"
+#include <gestormodo.h>
 
 Modo_t gm_MEDICION = {1, 0, 0, 0, 0, 0, 0, 0};
 Modo_t gm_CALIBRACION = {0, 1, 0, 0, 0, 0, 0, 0};

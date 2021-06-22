@@ -1,8 +1,7 @@
 #ifndef ISENSORRECEIVER_H
 #define ISENSORRECEIVER_H
 
-#include "ISensor.h"
-
+#include <iSensor.h>
 
 /**
 /* @brief Interfaz de un elemento para recibir comandos
@@ -13,7 +12,7 @@ typedef struct ISensorReceiver ISensorReceiver_t;
 
 struct ISensorReceiver
 {
-	void( *Operacion )( ISensorGeneral_t* sensor );
+	void( *Exec )( ISensorGeneral_t* sensor );
 };
 
 #endif // ISENSORRECEIVER_H

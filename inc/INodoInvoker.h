@@ -1,7 +1,7 @@
 #ifndef INODOINVOKER_H
 #define INODOINVOKER_H
 
-#include "ISensorCmd.h"
+#include <ISensorCmd.h>
 
 typedef struct INodoInvoker INodoInvoker_t;
 

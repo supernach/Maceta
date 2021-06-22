@@ -12,8 +12,8 @@
 
 
 
-#include "stm8s.h"
-#include "stdbool.h"
+#include <stm8s.h>
+#include <stdbool.h>
 
 #include "utils.h"
 

@@ -1,8 +1,8 @@
 #ifndef MACETA_H
 #define MACETA_H
 
-#include "inodoinvoker.h"
-#include "cmdleer.h"
+#include <INodoInvoker.h>
+#include <cmdLeer.h>
 
 extern INodoInvoker_t Maceta;
 

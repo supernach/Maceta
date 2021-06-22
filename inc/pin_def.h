@@ -1,7 +1,7 @@
 #ifndef PIN_DEF_H
 #define PIN_DEF_H 
 
-#include "stm8s.h"
+#include <stm8s.h>
 
 
 typedef struct sPin

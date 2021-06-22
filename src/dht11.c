@@ -1,4 +1,4 @@
-#include "dht11.h"
+#include <dht11.h>
 
 static @inline uint8_t leerByte( Pin* gpio )
 {

@@ -1,17 +1,14 @@
 #ifndef ISENSOR_H
 #define ISENSOR_H
 
-#include "sensorth.h"
-#include "gestormodo.h"
 
-typedef struct ISensor ISensor_t;
-typedef struct ISensorDatos ISensorDatos_t;
-typedef struct ISensorGeneral ISensorGeneral_t;
+#include <GestorModo.h>
 
 /**
 /*@brief Tipo destinado a albergar los datos comunes para 
 /*       el gestor de modo
 */
+typedef struct ISensorDatos ISensorDatos_t;
 struct ISensorDatos
 {
 	uint8_t ID;
@@ -24,6 +21,7 @@ struct ISensorDatos
 /*       que encargarse de inicializar datos y registrar
 /*       el sensor en el gestor de modos
 */
+typedef struct ISensor ISensor_t;
 struct ISensor
 {
 	ISensorDatos_t Datos;
@@ -36,9 +34,10 @@ struct ISensor
 /*        Cada sensor debe ser registrado aqui
 */
 
+typedef struct ISensorGeneral ISensorGeneral_t;
 struct ISensorGeneral
 {
-	SensorTH_t* SensorTH;
+	struct SensorTH* SensorTH;
 };
 
 /**

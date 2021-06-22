@@ -1,11 +1,9 @@
 #ifndef MACETA_DEF_H
 #define MACETA_DEF_H
 
-
-#include "gestormodo.h"
-#include "SensorTH.h"
-#include "maceta.h"
-
+#include <gestormodo.h>
+#include <maceta.h>
+#include <SensorTH.h>
 
 /**
 /* @brief Invocadores de comandos

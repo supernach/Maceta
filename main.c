@@ -3,12 +3,12 @@
  * 
  */
  
-#include "stm8s.h"
-#include "pin_def.h"
-#include "gpio.h"
-#include "clock.h"
-#include "utils.h"
-#include "maceta_def.h"
+#include <stm8s.h>
+#include <pin_def.h>
+#include <gpio.h>
+#include <clock.h>
+#include <utils.h>
+#include <maceta_def.h>
 
 
 
@@ -155,7 +155,7 @@ int main()
 	
 	while (1)
 	{
-		Maceta.ConfigCommand( &Maceta, &cmd_Leer, &sensor1.Orden, &ptrHaciaSensores );
+		Maceta.ConfigCommand( &Maceta, &cmd_Leer, &sensor1.cmdLeer, &ptrHaciaSensores );
 		Maceta.ExecuteCommand( &Maceta );
 		
 		Modo.NuevoModo(sensor1.Sistema.Datos.ID, &gm_MEDICION, &Modo.Datos);

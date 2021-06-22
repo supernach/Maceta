@@ -1,8 +1,8 @@
 #ifndef ISENSORCMD_H
 #define ISENSORCMD_H
 
-#include "ISensor.h"
-#include "ISensorReceiver.h"
+#include <iSensor.h>
+#include <ISensorReceiver.h>
 
 
 

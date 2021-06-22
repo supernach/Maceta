@@ -12,8 +12,8 @@
 
 */
 
-#include "stm8s.h"
-#include "gestormododef.h"
+#include <stm8s.h>
+#include <GestorModoDef.h>
 
 
 /**

@@ -16,9 +16,9 @@
 */
 			 
 
-#include "stm8s.h"
-#include "stdbool.h"
-#include "pin_def.h"
+#include <stm8s.h>
+#include <stdbool.h>
+#include <pin_def.h>
 
 /**
 @brief Inicializacion como entrada de una I/O. Se configura

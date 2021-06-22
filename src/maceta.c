@@ -1,5 +1,5 @@
 
-#include "maceta.h"
+#include <maceta.h>
 
 void Maceta_Init( INodoInvoker_t* nodo )
 {

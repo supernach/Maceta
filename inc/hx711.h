@@ -1,9 +1,9 @@
 #ifndef HX711_H
 #define HX711_H
 
-#include "utils.h"
-#include "pin_def.h"
-#include "gpio.h"
+#include <utils.h>
+#include <pin_def.h>
+#include <gpio.h>
 
 typedef struct HX711 HX711_t;
 typedef struct HX711_Config HX711_Config_t;

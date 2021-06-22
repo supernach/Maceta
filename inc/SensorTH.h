@@ -15,16 +15,15 @@
 /*
 */
 
-#include "dht11.h"
-#include "ISensorReceiver.h"
+#include <dht11.h>
+#include <ISensorReceiver.h>
 
 
-typedef struct sensorTH SensorTH_t;
-
-struct sensorTH
+typedef struct SensorTH SensorTH_t;
+struct SensorTH
 {
 	DHT11_t Sensor;
-	ISensorReceiver_t Orden;
+	ISensorReceiver_t cmdLeer;
 	ISensor_t Sistema;
 };
 

@@ -1,9 +1,9 @@
 #ifndef DHT11_H
 #define DHT11_H
 
-#include "utils.h"
-#include "pin_def.h"
-#include "gpio.h"
+#include <utils.h>
+#include <pin_def.h>
+#include <Gpio.h>
 
 typedef struct DHT11 DHT11_t;
 typedef struct DHT11_Config DHT11_Config_t;

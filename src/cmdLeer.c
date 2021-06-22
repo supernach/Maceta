@@ -1,4 +1,4 @@
-#include "cmdLeer.h"
+#include <cmdLeer.h>
 
 
 void cmdLeer_Init( ISensorCmd_t* cmd )
@@ -9,6 +9,6 @@ void cmdLeer_Init( ISensorCmd_t* cmd )
 
 void cmdLeerExecute( ISensorCmd_t* cmd, ISensorGeneral_t* sensor )
 {
-	//cmd->Receiver->Operacion = SensorTH_Medicion
-	cmd->Receiver->Operacion(sensor);
+	//cmd->Receiver->Operacion = &SensorTH_Medicion;
+	cmd->Receiver->Exec(sensor);
 }
